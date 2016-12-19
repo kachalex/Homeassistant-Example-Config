@@ -8,8 +8,8 @@ homeassistant:
   name: Nico - Casa
   temperature_unit: C
   time_zone: Europe/Rome
-  latitude: 12.1223
-  longitude: 12.3245
+  latitude: 41.983280
+  longitude: 12.625013
   unit_system: metric
   elevation: 47
   customize: !include_dir_merge_named customizations
@@ -59,8 +59,21 @@ shell_command: !include shell_commands.yaml
 script: !include scripts.yaml
 weblink: !include weblink.yaml
 camera: !include camera.yaml
+google: !include google.yaml
+google_calendars: !include google_calendars.yaml
+
 
 # Dir List
 
 automation: !include_dir_list automation
 scene: !include_dir_list scene
+
+
+############################################################
+#
+#              Input Slider and Boolean                    #
+#
+############################################################
+
+input_slider: !include input_slider.yaml
+input_boolean: !include input_boolean.yaml
