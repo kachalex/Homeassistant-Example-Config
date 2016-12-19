@@ -8,8 +8,8 @@ homeassistant:
   name: Nico - Casa
   temperature_unit: C
   time_zone: Europe/Rome
-  latitude: 41.983280
-  longitude: 12.625013
+  latitude: TOPsecret
+  longitude: TOPsecret
   unit_system: metric
   elevation: 47
   customize: !include_dir_merge_named customizations
