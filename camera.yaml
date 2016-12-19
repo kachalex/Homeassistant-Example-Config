@@ -1,5 +1,5 @@
 - platform: foscam
-  ip: 10.10.10.205
+  ip: xxx.xxx.xxx.xxx
   #username: user
   #password: password
   name: "Camera Salone R2"
