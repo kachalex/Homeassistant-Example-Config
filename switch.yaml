@@ -1,8 +1,8 @@
 - platform: wake_on_lan
-  mac_address: '00-11-32-25-62-9B'
+  mac_address: 'xx-xx-xx-xx-xx-xx'
   name: DSM01
-  host: 10.10.10.200
+  host: xx.xx.xx.xxx
 - platform: wake_on_lan
-  mac_address: '60-A4-4C-42-E4-53'
+  mac_address: 'xx-xx-xx-xx-xx-xx'
   name: Nico-PC
-  host: 10.10.10.217
+  host: xxx.xx.xx.xx
