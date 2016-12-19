@@ -7,7 +7,7 @@
 homeassistant:
   name: Nico - Casa
   temperature_unit: C
-  time_zone: Europe/Rome
+  time_zone: Europe/Vienna
   latitude: TOPsecret
   longitude: TOPsecret
   unit_system: metric
