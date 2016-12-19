@@ -1,9 +1,9 @@
    platform: yeelight
    automatic_add: False
    devices:
-     10.10.10.239:
+     x.x.x.x:
         name: Salone - Divano - RGB
-     10.10.10.219:
+     x.x.x.x:
         name: Salone - Finestra - White
-     10.10.10.213:
+     x.x.x.x:
         name: Salone - Porta - White
