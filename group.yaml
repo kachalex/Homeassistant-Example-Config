@@ -20,6 +20,12 @@ Scene:
     - group.scene
     - group.scenes
 
+Energy:
+  view: yes
+  name: Energy
+  entities:
+  - group.efergy
+
 Videocamere:
   view: yes
   icon: mdi:video
@@ -43,32 +49,39 @@ Settings:
   - group.scripts
   - group.automation_tasks
 
+clock:
+  view: yes
+  name: Wake Me Up
+  icon: mdi:clock
+  entities:
+  - group.alarmclock
+
 Synology:
   view: Yes
   icon: mdi:server-network
   entities:
-    - group.synology_cpus_status
-    - group.synology_network_status
-    - group.synology_memory_status
-    - group.synology_disk_status
+  - group.synology_cpus_status
+  - group.synology_network_status
+  - group.synology_memory_status
+  - group.synology_disk_status
 
 Miscellaneous:
   view: yes
   name: Restart Home Assistant
   entities:
-    - script.restart_ha
+  - script.restart_ha
 
 Nicos:
   view: yes
   name: Nico
   entities:
-    - group.nico
+  - group.nico
 
 Mammas:
   view: yes
   name: Mamma
   entities:
-    - group.mamma
+  - group.mamma
 
 
 ############################################################
@@ -127,6 +140,9 @@ Dispositivi fissi Casa Nico:
      - device_tracker.wkmob021
      - device_tracker.tvsalone
      - device_tracker.videocamerasaloner2
+     - device_tracker.efergyegocharger
+     - device_tracker.efergysp2bcfaf1
+     - device_tracker.efergyengage
 
 Condizioni Meteo:
    entities:
@@ -168,6 +184,8 @@ Automation Tasks:
   - automation.nico_at_work__notification
   - automation.nico_is_going_out__notification
   - automation.nico_out_from_work__notification
+  - automation.nico_at_papas_home__notification
+  - automation.nico_leaving_papas_home__notification
   - automation.notify_on_sunrise
   - automation.notify_on_sunset
   - automation.owntracks_refresh
@@ -227,3 +245,16 @@ Mamma:
   - device_tracker.mamma_mamma
   - sensor.batteria_telefono_mamma
   - camera.mamma
+
+alarmclock:
+  - automation.wake_me_up
+  - sensor.alarm_time
+  - input_slider.alarmhour
+  - input_slider.alarmminutes
+  - input_boolean.alarmweekday
+
+efergy:
+  - sensor.energy_usage
+  - sensor.energy_budget
+  - sensor.energy_consumed
+  - sensor.energy_cost
