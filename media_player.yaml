@@ -1,4 +1,4 @@
 - platform: cast
-  host: 10.10.10.221
+  host: xx.xx.xx.xxx
 - platform: samsungtv
-  host: 10.10.10.214
+  host: xx.xx.xx.xxx
