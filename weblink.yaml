@@ -1,11 +1,11 @@
   entities:
     - name: Router (Ext)
-      url: https://nico-home.dyndns.org:463
+      url: https://TOPsecret
     - name: Router (Lan)
-      url: https://10.10.10.1:463
+      url: https://TOPsecret
     - name: Home Assistant
       url: https://home-assistant.io
     - name: Synology DSM01 (Ext)
-      url: https://nico-home.dyndns.org:5001
+      url: https://TOPsecret
     - name: Synology DSM01 (Lan)
-      url: https://10.10.10.200:5001
+      url: https://TOPsecret
