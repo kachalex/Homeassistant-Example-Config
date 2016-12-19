@@ -1,0 +1,82 @@
+- platform: mqtt
+  state_topic: "owntracks/Nico/Nico"
+  name: "Batteria Telefono Nico"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+
+- platform: mqtt
+  state_topic: "owntracks/mamma/mamma"
+  name: "Batteria Telefono Mamma"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+
+- platform: speedtest
+  minute:
+    - 0
+    - 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: fastdotcom
+  minute:
+    - 0
+    - 30
+
+- platform: openweathermap
+  api_key: API Key
+  monitored_conditions:
+      - weather
+      - temperature
+      - wind_speed
+      - humidity
+      - pressure
+      - clouds
+      - rain
+      - snow
+
+- platform: synologydsm
+  host: 10.10.10.200
+  username: user
+  password: password
+  monitored_conditions:
+    - cpu_total_load
+    - cpu_other_load
+    - cpu_user_load
+    - cpu_15min_load
+    - memory_real_usage
+    - memory_available_real
+    - memory_total_real
+    - memory_size
+    - memory_cached
+    - memory_available_swap
+    - memory_total_swap
+    - network_up
+    - network_down
+    - disk_smart_status
+    - disk_status
+    - disk_temp
+    - volume_status
+    - volume_device_type
+    - volume_size_total
+    - volume_size_used
+    - volume_percentage_used
+
+- platform: time_date
+  display_options:
+    - time
+    - date
+    - date_time
+    - time_date
+    - time_utc
+
+#- platform: efergy
+  #app_token: APP_TOKEN
+  #utc_offset: UTC_OFFSET
+  #monitored_variables:
+    #- type: instant_readings
+    #- type: budget
+    #- type: cost
+      #period: day
+      #currency: €

@@ -1,0 +1,9 @@
+ alias: Away Mode ON
+ trigger:
+   platform: state
+   entity_id: group.famiglia
+   state: 'not_home'
+ action:
+  service: notify.telegram_bot
+  data:
+    message: "Non c'è nessuno a Casa at {{ states('sensor.date__time') }}"

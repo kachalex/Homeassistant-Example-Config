@@ -1,0 +1,22 @@
+####ALARM ####
+
+####TEST SCRIPTS####
+
+####GLOBAL SCRIPTS####
+
+####TRIGGERED LIGHTS
+
+####NOTIFICATIONS AND ALERTS####
+restart_ha: !include scripts/restart_ha.yaml
+sunrise: !include scripts/sunrise.yaml
+sunset: !include scripts/sunset.yaml
+low_battery: !include scripts/low_battery.yaml
+
+####PARTY
+
+####MEDIA####
+
+####Cars####
+
+####Phones####
+refresh_devices: !include scripts/refresh_devices.yaml

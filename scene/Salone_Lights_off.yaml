@@ -1,0 +1,8 @@
+name: Lights OFF - Salone
+entities:
+  light.salone__divano__rgb:
+    state: off
+  light.salone__finestra__white:
+    state: off
+  light.salone__porta__white:
+    state: off

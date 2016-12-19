@@ -1,0 +1,10 @@
+name: Romantic - Salone
+entities:
+  light.salone__divano__rgb:
+    state: on
+    rgb_color: [220, 20, 60]
+    brightness: 200
+  light.salone__finestra__white:
+    state: off
+  light.salone__porta__white:
+    state: off

@@ -1,0 +1,229 @@
+############################################################
+#                                                          #
+#                     Group Tabs                           #
+#                                                          #
+############################################################
+
+Weather:
+  view: yes
+  icon: mdi:temperature-celsius
+  name: Weather
+  entities:
+   - group.sun
+   - group.condizioni_meteo
+   - group.date
+
+Scene:
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+    - group.scene
+    - group.scenes
+
+Videocamere:
+  view: yes
+  icon: mdi:video
+  name: Video Camere
+  entities:
+   - group.salone_video_camera
+
+Device:
+  view: yes
+  icon: mdi:laptop-mac
+  name: Dispositivi
+  entities:
+   - group.dispositivi_fissi_casa_nico
+
+Settings:
+  view: yes
+  name: Settings
+  icon: mdi:settings
+  entities:
+  - group.wake_on_lan
+  - group.scripts
+  - group.automation_tasks
+
+Synology:
+  view: Yes
+  icon: mdi:server-network
+  entities:
+    - group.synology_cpus_status
+    - group.synology_network_status
+    - group.synology_memory_status
+    - group.synology_disk_status
+
+Miscellaneous:
+  view: yes
+  name: Restart Home Assistant
+  entities:
+    - script.restart_ha
+
+Nicos:
+  view: yes
+  name: Nico
+  entities:
+    - group.nico
+
+Mammas:
+  view: yes
+  name: Mamma
+  entities:
+    - group.mamma
+
+
+############################################################
+#                                                          #
+#                  Entities Groups                         #
+#                                                          #
+############################################################
+
+Sun:
+  entities:
+    - sun.sun
+    - sensor.yr_symbol
+
+Lights:
+  entities:
+    - light.salone__divano__rgb
+    - device_tracker.yeelightrgbsalone
+    - light.salone__finestra__white
+    - device_tracker.yeelightwhitesalonefinestra
+    - light.salone__porta__white
+    - device_tracker.yeelightwhitesaloneporta
+
+Date:
+  entities:
+    - sensor.date
+    - sensor.date__time
+    - sensor.time
+    - sensor.time__date
+    - sensor.time_utc
+
+Famiglia:
+  entities:
+    - device_tracker.nico_nico
+    - sensor.batteria_telefono_nico
+    - device_tracker.mamma_mamma
+    - sensor.batteria_telefono_mamma
+
+Dispositivi Mobili:
+  entities:
+    - device_tracker.mammasgs3
+    - device_tracker.nicosgs6
+
+Dispositivi fissi Casa Nico:
+  entities:
+     - device_tracker.fritzbox
+     - device_tracker.chromecast
+     - device_tracker.nicopc
+     - device_tracker.pc101010214
+     - device_tracker.android22b03b5e29e75f3
+     - device_tracker.pc101010207
+     - device_tracker.fritzbox
+     - device_tracker.dsm01
+     - device_tracker.yeelightrgbsalone
+     - device_tracker.yeelightwhitesalonefinestra
+     - device_tracker.yeelightwhitesaloneporta
+     - device_tracker.wkmob021
+     - device_tracker.tvsalone
+     - device_tracker.videocamerasaloner2
+
+Condizioni Meteo:
+   entities:
+    - sensor.owm_temperature
+    - sensor.owm_condition
+    - sensor.owm_cloud_coverage
+    - sensor.owm_rain
+    - sensor.owm_humidity
+    - sensor.owm_pressure
+    - sensor.owm_snow
+    - sensor.owm_wind_speed
+    - camera.rome
+
+Scenes:
+  entities:
+    - scene.romantic__salone
+    - scene.movies__salone
+    - scene.sunset__salone
+    - scene.lights_on__salone
+    - scene.lights_off__salone
+
+Speedtest:
+  - sensor.speedtest_ping
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+  - sensor.fastcom_download
+
+Wake on LAN:
+  - switch.dsm01
+  - switch.nicopc
+
+Automation Tasks:
+  - automation.away_mode_on
+  - automation.presence_notification
+  - automation.light_on_sunset
+  - automation.mamma_at_home__notification
+  - automation.mamma_outside_home__notification
+  - automation.nico_at_home__notification
+  - automation.nico_at_work__notification
+  - automation.nico_is_going_out__notification
+  - automation.nico_out_from_work__notification
+  - automation.notify_on_sunrise
+  - automation.notify_on_sunset
+  - automation.owntracks_refresh
+  - automation.update_available_notifications
+  - automation.device_status
+
+
+Scripts:
+  - script.restart_ha
+  - script.refresh_devices
+  - script.low_battery
+  - script.sunrise
+  - script.sunset
+
+Synology CPUs Status:
+  - sensor.cpu_load_total
+  - sensor.cpu_load_user
+  - sensor.cpu_load_total
+  - sensor.cpu_load_other
+  - sensor.cpu_load_15_min
+
+Synology Network Status:
+  - sensor.network_up
+  - sensor.network_down
+
+Synology Memory Status:
+  - sensor.memory_usage_real
+  - sensor.memory_available_real
+  - sensor.memory_size
+  - sensor.memory_available_swap
+  - sensor.memory_cached
+  - sensor.memory_total_real
+  - sensor.memory_total_swap
+
+Synology Disk Status:
+  - sensor.status_sda
+  - sensor.status_smart_sda
+  - sensor.temperature_sda
+  - sensor.status_sdb
+  - sensor.status_smart_sdb
+  - sensor.temperature_sdb
+  - sensor.status_volume_1
+  - sensor.total_size_volume_1
+  - sensor.type_volume_1
+  - sensor.used_space_volume_1
+  - sensor.volume_used_volume_1
+
+Salone Video Camera:
+  - camera.camera_salone_r2
+
+Nico:
+  - device_tracker.nico_nico
+  - sensor.batteria_telefono_nico
+  - camera.nico
+
+Mamma:
+  - device_tracker.mamma_mamma
+  - sensor.batteria_telefono_mamma
+  - camera.mamma

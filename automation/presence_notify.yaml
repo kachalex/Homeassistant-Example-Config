@@ -1,0 +1,9 @@
+ alias: Presence Notification
+ trigger:
+   platform: state
+   entity_id: group.famiglia
+   state: 'home'
+ action:
+  service: notify.telegram_bot
+  data:
+    message: "E' tornato qualcuno a Casa at {{ states('sensor.date__time') }}"

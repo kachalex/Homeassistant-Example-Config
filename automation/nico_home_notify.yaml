@@ -1,0 +1,10 @@
+ alias: Nico at Home - Notification
+ trigger:
+   platform: state
+   entity_id: device_tracker.nico_nico
+   from: 'not_home'
+   to: 'home'
+ action:
+  service: notify.telegram_bot
+  data:
+    message: "Nico is at Home at {{ states('sensor.date__time') }}"

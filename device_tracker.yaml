@@ -1,0 +1,15 @@
+- platform: fritz
+  host: 10.10.10.1
+  #username: admin
+  #password: password
+
+- platform: owntracks
+
+- platform: mqtt
+  devices:
+     Nico_SGS6: /location/Nico
+     Mamma-SGS3: /location/mamma
+
+- platform: nmap_tracker
+  hosts: 10.10.10.1/24
+  home_interval: 10

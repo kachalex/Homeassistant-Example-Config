@@ -1,0 +1,13 @@
+name: Lights ON - Salone
+entities:
+  light.salone__divano__rgb:
+    state: on
+    rgb_color: [254, 254, 254]
+    color_temp: 154
+    brightness: 254
+  light.salone__finestra__white:
+    state: on
+    brightness: 254
+  light.salone__porta__white:
+    state: on
+    brightness: 254

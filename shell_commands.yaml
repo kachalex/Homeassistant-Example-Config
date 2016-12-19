@@ -1,0 +1,3 @@
+  nico_update: 'mosquitto_pub -d -u Nico -P password -t owntracks/Nico/Nico/cmd -m "{"_type":"cmd","action":"reportLocation"}"'
+  mamma_update: 'mosquitto_pub -d -u mamma -P password -t owntracks/mamma/mamma/cmd -m "{"_type":"cmd","action":"reportLocation"}"'
+  restart_ha: sudo service hass-daemon restart &

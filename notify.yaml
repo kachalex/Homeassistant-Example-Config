@@ -1,0 +1,4 @@
+- name: Telegram_bot
+  platform: telegram
+  #api_key: API_KEY
+  #chat_id: ID

@@ -1,0 +1,29 @@
+- name: Work
+  latitude: 41.904815
+  longitude: 12.457522
+  radius: 50
+  icon: mdi:city
+
+- name: Work
+  latitude: 41.931670
+  longitude: 12.519521
+  radius: 50
+  icon: mdi:city
+
+- name: Work
+  latitude: 41.976649
+  longitude: 12.528308
+  radius: 50
+  icon: mdi:city
+
+- name: Home2
+  latitude: 41.887596
+  longitude: 12.541242
+  radius: 25
+  icon: mdi:home-modern
+
+- name: Home3
+  latitude: 41.963414
+  longitude: 12.556708
+  radius: 25
+  icon: mdi:home-outline

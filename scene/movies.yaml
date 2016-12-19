@@ -1,0 +1,10 @@
+name: Movies - Salone
+entities:
+  light.salone__divano__rgb:
+    state: on
+    rgb_color: [65, 105, 225]
+    brightness: 80
+  light.salone__finestra__white:
+    state: off
+  light.salone__porta__white:
+    state: off
