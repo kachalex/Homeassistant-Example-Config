@@ -1,6 +1,6 @@
 - platform: fritz
-  host: 10.10.10.1
-  #username: admin
+  host: xx.xx.xx.x
+  #username: user
   #password: password
 
 - platform: owntracks
@@ -11,5 +11,5 @@
      Mamma-SGS3: /location/mamma
 
 - platform: nmap_tracker
-  hosts: 10.10.10.1/24
+  hosts: xx.xx.xx.x/24
   home_interval: 10
