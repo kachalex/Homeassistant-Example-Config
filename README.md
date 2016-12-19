@@ -1,3 +1,3 @@
-# Homeassistant-Example-Config
-Home Assistant - Example - Config
+# Homeassistant Config Example By Ciquattro
+
 Home assistant Configuration Example
