@@ -1,11 +1,6 @@
 # Homeassistant Template Example By Ciquattro
 
-Home assistant Configuration
-
-![alt text](screenshots/hass1.png "Screenshot Example")
-![alt text](screenshots/hass2.png "Screenshot Example")
-
-Home Assistant configuration files (YAMLs)
+Home assistant Configuration (YAMLs)
 
 This is my Home Assistant Configuration created with a Docker Installation on a Synology DSM 713+ with an expanded 4GB ram.
 
@@ -21,3 +16,7 @@ Devices I have :
 - Synology NAS
 - Foscam R2 Camera
 - Yeelight RGB and White Bulb
+
+
+![alt text](screenshots/hass1.png "Screenshot Example")
+![alt text](screenshots/hass2.png "Screenshot Example")
