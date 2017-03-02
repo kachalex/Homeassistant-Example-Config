@@ -5,9 +5,9 @@
     offset: '+00:00:00'
   action:
     # Actions are scripts so can also be a list of actions
-    - service: notify.telegram_bot
+    - service: notify.homenicoassistant_bot
       data:
         message: "Beautiful sunrise!"
-    - service: notify.telegram_bot
+    - service: notify.homenicoassistant_bot
       data:
-        message: "The sun is up. Wake Up!"
+        message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"

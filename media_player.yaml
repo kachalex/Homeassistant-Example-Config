@@ -2,3 +2,4 @@
   host: xx.xx.xx.xxx
 - platform: samsungtv
   host: xx.xx.xx.xxx
+- platform: braviatv

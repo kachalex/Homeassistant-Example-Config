@@ -1,0 +1,15 @@
+  alias: AC - Morning - OFF
+  trigger:
+    platform: time
+    after: '08:00:00'
+  condition:
+   - condition: time
+     weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+  action:
+      service: switch.turn_off
+      entity_id: switch.air_conditioner

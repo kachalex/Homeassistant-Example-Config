@@ -1,10 +1,10 @@
  alias: Mamma Outside Home - Notification
  trigger:
-   platform: state
-   entity_id: device_tracker.mamma_mamma
-   from: 'home'
-   to: 'not_home'
+    platform: zone
+    event: leave
+    zone: zone.home
+    entity_id: device_tracker.mamma_mamma
  action:
-  service: notify.telegram_bot
+  service: notify.homenicoassistant_bot
   data:
-    message: "Mamma is outside at {{ states('sensor.date__time') }}"
+    message: "Mamma is going out at {{ states('sensor.date__time') }}"

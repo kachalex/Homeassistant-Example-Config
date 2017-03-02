@@ -15,6 +15,11 @@
       - thu
       - fri
   action:
-    service: notify.telegram_bot
-    data:
-      message: "Nico is going out from Work at {{ states('sensor.date__time') }}"
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "Nico is going out from Work at {{ states('sensor.date__time') }}"
+   - service: notify.homenicoassistant_bot
+     data_template:
+      message: >
+        "Nico just changed from {{ trigger.from_state.state }}
+        to {{ trigger.to_state.state }}"

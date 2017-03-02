@@ -1,13 +1,15 @@
-name: Lights ON - Salone
+name: Lights ON - Lounge
 entities:
-  light.salone__divano__rgb:
+  light.lounge__sofa__rgb:
     state: on
     rgb_color: [254, 254, 254]
     color_temp: 154
     brightness: 254
-  light.salone__finestra__white:
+  light.lounge__window__white:
     state: on
     brightness: 254
-  light.salone__porta__white:
+  light.lounge__door__rgb:
     state: on
+    rgb_color: [254, 254, 254]
+    color_temp: 154
     brightness: 254

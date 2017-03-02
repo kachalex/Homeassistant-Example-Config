@@ -1,0 +1,18 @@
+trigger:
+    platform: state
+    entity_id: group.family
+    state: 'home'
+action:
+    service: notify.homenicoassistant_bot
+    data_template:
+      message: >
+       {% if is_state('device_tracker.nico_nico', 'home') %}
+         Nico is home!
+       {% else %}
+         Nico is at {{ states('device_tracker.nico_nico') }}
+       {% endif %}
+       {% if is_state('device_tracker.mamma_mamma', 'home') %}
+         Mamma is home!
+       {% else %}
+         Mamma is at {{ states('device_tracker.mamma_mamma') }}
+       {% endif %}

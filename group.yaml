@@ -4,21 +4,45 @@
 #                                                          #
 ############################################################
 
+default_view:
+ view: yes
+ entities:
+   #- group.sun
+   #- group.weather_condition
+   - group.lights
+   - group.scenes
+   - group.Entertainment
+   - group.salone_video_camera
+   - group.family
+   #- group.efergy
+   - group.ac
+   - group.wake_on_lan
+   - group.nico
+   - group.mamma
+   - group.iss
+
 Weather:
   view: yes
   icon: mdi:temperature-celsius
   name: Weather
   entities:
    - group.sun
-   - group.condizioni_meteo
-   - group.date
+   - group.weather_condition
+   - group.iss
+
+TV:
+  view: yes
+  name: TV
+  entities:
+    - group.Entertainment
 
 Scene:
   view: yes
   icon: mdi:lightbulb
   entities:
-    - group.scene
+    - group.lights
     - group.scenes
+
 
 Energy:
   view: yes
@@ -39,6 +63,7 @@ Device:
   name: Dispositivi
   entities:
    - group.dispositivi_fissi_casa_nico
+   - group.fritz
 
 Settings:
   view: yes
@@ -47,7 +72,6 @@ Settings:
   entities:
   - group.wake_on_lan
   - group.scripts
-  - group.automation_tasks
 
 clock:
   view: yes
@@ -65,11 +89,11 @@ Synology:
   - group.synology_memory_status
   - group.synology_disk_status
 
-Miscellaneous:
-  view: yes
-  name: Restart Home Assistant
-  entities:
-  - script.restart_ha
+#Miscellaneous:
+  #view: yes
+  #name: Restart Home Assistant
+  #entities:
+  #- script.restart_ha
 
 Nicos:
   view: yes
@@ -83,6 +107,11 @@ Mammas:
   entities:
   - group.mamma
 
+Mascia:
+  view: yes
+  name: Mascia
+  entities:
+  - group.maria
 
 ############################################################
 #                                                          #
@@ -97,54 +126,30 @@ Sun:
 
 Lights:
   entities:
-    - light.salone__divano__rgb
-    - device_tracker.yeelightrgbsalone
-    - light.salone__finestra__white
-    - device_tracker.yeelightwhitesalonefinestra
-    - light.salone__porta__white
-    - device_tracker.yeelightwhitesaloneporta
-
-Date:
+    - light.lounge__sofa__rgb
+    - light.lounge__door__rgb
+    - light.lounge__window__white
+    - light.room__nico__rgb
+    - light.kitchen__white    
+    
+Scenes:
   entities:
-    - sensor.date
-    - sensor.date__time
-    - sensor.time
-    - sensor.time__date
-    - sensor.time_utc
+    - scene.romantic__lounge
+    - scene.movies__lounge
+    - scene.lights_on__lounge
+    - scene.lights_off__lounge
+    - scene.romantic__nico
 
-Famiglia:
-  entities:
-    - device_tracker.nico_nico
-    - sensor.batteria_telefono_nico
-    - device_tracker.mamma_mamma
-    - sensor.batteria_telefono_mamma
+AC:
+  - switch.air_conditioner__heat_30
+  - automation.ac__morning__on
+  - automation.ac__morning__off
 
-Dispositivi Mobili:
-  entities:
-    - device_tracker.mammasgs3
-    - device_tracker.nicosgs6
+Wake on LAN:
+  - switch.nicopc
+  - switch.dsm01
 
-Dispositivi fissi Casa Nico:
-  entities:
-     - device_tracker.fritzbox
-     - device_tracker.chromecast
-     - device_tracker.nicopc
-     - device_tracker.pc101010214
-     - device_tracker.android22b03b5e29e75f3
-     - device_tracker.pc101010207
-     - device_tracker.fritzbox
-     - device_tracker.dsm01
-     - device_tracker.yeelightrgbsalone
-     - device_tracker.yeelightwhitesalonefinestra
-     - device_tracker.yeelightwhitesaloneporta
-     - device_tracker.wkmob021
-     - device_tracker.tvsalone
-     - device_tracker.videocamerasaloner2
-     - device_tracker.efergyegocharger
-     - device_tracker.efergysp2bcfaf1
-     - device_tracker.efergyengage
-
-Condizioni Meteo:
+Weather Condition:
    entities:
     - sensor.owm_temperature
     - sensor.owm_condition
@@ -156,41 +161,57 @@ Condizioni Meteo:
     - sensor.owm_wind_speed
     - camera.rome
 
-Scenes:
+Efergy:
+  - sensor.energy_usage
+  - sensor.energy_budget
+  - sensor.energy_consumed
+  - sensor.energy_cost
+
+Date:
   entities:
-    - scene.romantic__salone
-    - scene.movies__salone
-    - scene.sunset__salone
-    - scene.lights_on__salone
-    - scene.lights_off__salone
+    - sensor.date
+    - sensor.date__time
+    - sensor.time
+    - sensor.time__date
+    - sensor.time_utc
+
+Family:
+  entities:
+    - device_tracker.nico_nico
+    - sensor.batteria_telefono_nico
+    - device_tracker.mamma_mamma
+    - sensor.batteria_telefono_mamma
+    
+Salone Video Camera:
+  - camera.camera_salone_r2
+
+Entertainment:
+  - media_player.sony_bravia_tv
+  - media_player.kd55xd9305
+  - media_player.chromecastsalone
+
+Nico:
+  - device_tracker.nico_nico
+  - sensor.batteria_telefono_nico
+  - camera.nico
+
+Mamma:
+  - device_tracker.mamma_mamma
+  - sensor.batteria_telefono_mamma
+  - camera.mamma
+
+Maria:
+  - device_tracker.iphonemarie
+
+ISS:
+  - camera.iss
+  - binary_sensor.iss
 
 Speedtest:
   - sensor.speedtest_ping
   - sensor.speedtest_download
   - sensor.speedtest_upload
   - sensor.fastcom_download
-
-Wake on LAN:
-  - switch.dsm01
-  - switch.nicopc
-
-Automation Tasks:
-  - automation.away_mode_on
-  - automation.presence_notification
-  - automation.light_on_sunset
-  - automation.mamma_at_home__notification
-  - automation.mamma_outside_home__notification
-  - automation.nico_at_home__notification
-  - automation.nico_at_work__notification
-  - automation.nico_is_going_out__notification
-  - automation.nico_out_from_work__notification
-  - automation.nico_at_papas_home__notification
-  - automation.nico_leaving_papas_home__notification
-  - automation.notify_on_sunrise
-  - automation.notify_on_sunset
-  - automation.owntracks_refresh
-  - automation.update_available_notifications
-  - automation.device_status
 
 
 Scripts:
@@ -233,18 +254,8 @@ Synology Disk Status:
   - sensor.used_space_volume_1
   - sensor.volume_used_volume_1
 
-Salone Video Camera:
-  - camera.camera_salone_r2
-
-Nico:
-  - device_tracker.nico_nico
-  - sensor.batteria_telefono_nico
-  - camera.nico
-
-Mamma:
-  - device_tracker.mamma_mamma
-  - sensor.batteria_telefono_mamma
-  - camera.mamma
+fritz:
+  - sensor.fritz_netmonitor
 
 alarmclock:
   - automation.wake_me_up
@@ -253,8 +264,51 @@ alarmclock:
   - input_slider.alarmminutes
   - input_boolean.alarmweekday
 
-efergy:
-  - sensor.energy_usage
-  - sensor.energy_budget
-  - sensor.energy_consumed
-  - sensor.energy_cost
+Dispositivi Mobili:
+  entities:
+    - device_tracker.mammasgs3
+    - device_tracker.nicosgs6
+
+Dispositivi fissi Casa Nico:
+  entities:
+     - device_tracker.yeelightrgbsalone
+     - device_tracker.yeelightrgbsaloneporta
+     - device_tracker.yeelightwhitesalonefinestra
+     - device_tracker.yeelightwhitecucina
+     - device_tracker.yeelightrgbnicoroom
+     - device_tracker.fritzbox
+     - device_tracker.chromecast
+     - device_tracker.android7956eaa11ad0a44a
+     - device_tracker.android7956eaa11ad0a44a_2
+     - device_tracker.nicopc
+     - device_tracker.pc101010214
+     - device_tracker.android22b03b5e29e75f3
+     - device_tracker.pc101010207
+     - device_tracker.dsm01
+     - device_tracker.wkmob021
+     - device_tracker.tvsalone
+     - device_tracker.videocamerasaloner2
+     - device_tracker.efergyegocharger
+     - device_tracker.efergysp2bcfaf1
+     - device_tracker.efergyengage
+     - device_tracker.broadlinkrmminifc0109
+
+#Automation Tasks:
+  #- automation.away_mode_on
+  #- automation.presence_notification
+  #- automation.light_on_sunset
+  #- automation.mamma_at_home__notification
+  #- automation.mamma_outside_home__notification
+  #- automation.nico_at_home__notification
+  #- automation.nico_at_work__notification
+  #- automation.nico_is_going_out__notification
+  #- automation.nico_out_from_work__notification
+  #- automation.nico_at_papas_home__notification
+  #- automation.nico_leaving_papas_home__notification
+  #- automation.notify_on_sunrise
+  #- automation.notify_on_sunset
+  #- automation.owntracks_refresh
+  #- automation.update_available_notifications
+  #- automation.device_status
+  #- automation.home_assistant_start__notify
+  #- automation.turn_off_light_at_midnight

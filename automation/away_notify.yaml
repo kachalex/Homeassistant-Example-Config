@@ -1,9 +1,9 @@
- alias: Away Mode ON
+ alias: No one at Home - Notification
  trigger:
    platform: state
    entity_id: group.famiglia
    state: 'not_home'
  action:
-  service: notify.telegram_bot
+  service: notify.homenicoassistant_bot
   data:
-    message: "Non c'è nessuno a Casa at {{ states('sensor.date__time') }}"
+    message: "No one is at home {{ states('sensor.date__time') }}"

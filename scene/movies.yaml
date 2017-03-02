@@ -1,10 +1,14 @@
-name: Movies - Salone
+name: Movies - Lounge
 entities:
-  light.salone__divano__rgb:
+  light.lounge__sofa__rgb:
     state: on
     rgb_color: [65, 105, 225]
     brightness: 80
-  light.salone__finestra__white:
-    state: off
-  light.salone__porta__white:
-    state: off
+  light.lounge__window__white:
+    state: on
+    rgb_color: [65, 105, 225]
+    brightness: 80
+  light.lounge__door__rgb:
+    state: on
+    rgb_color: [65, 105, 225]
+    brightness: 80

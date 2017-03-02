@@ -1,0 +1,10 @@
+ alias: Nico at Papa's Home - Notification
+ trigger:
+    platform: zone
+    event: enter
+    zone: zone.papa
+    entity_id: device_tracker.nico_nico
+ action:
+  service: notify.homenicoassistant_bot
+  data:
+    message: "Nico is at Papa's Home at {{ states('sensor.date__time') }}"

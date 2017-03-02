@@ -2,7 +2,7 @@ sequence:
 - event: LOGBOOK_ENTRY
   event_data:
     name: EVENT
-    message: SUNSET
-- service: notify.telegram_bot
+    message: "SUNSET"
+- service: notify.homenicoassistant_bot
   data:
-    message: "The sun is setting. Woow Beautiful!"
+    message: "The sun is setting. Woow Beautiful! {{ states('sensor.date__time') }}"

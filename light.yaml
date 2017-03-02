@@ -2,8 +2,17 @@
    automatic_add: False
    devices:
      x.x.x.x:
-        name: Salone - Divano - RGB
+        name: Lounge - Sofa - RGB
+        #transition: 1000
+        #use_music_mode: False
+        #save_on_change: False
      x.x.x.x:
-        name: Salone - Finestra - White
+        name: Lounge - Door - RGB
+        #transition: 1000
+        #use_music_mode: False
+        #save_on_change: False
      x.x.x.x:
-        name: Salone - Porta - White
+        name: Lounge - Window - White
+        #transition: 1000
+        #use_music_mode: False
+        #save_on_change: False

@@ -1,0 +1,16 @@
+ alias: Nico Battery Low - Notification
+ trigger:
+   platform: template
+   #entity_id: sensor.batteria_telefono_nico
+   # Optional
+   value_template: '{{ states.device_tracker.nico_nico.attributes.battery < 30 }}'
+   # At least one of the following required
+   #above: 25
+   #below: 48
+ action:
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "Nico's Telephone is on low Battery at {{ states('sensor.date__time') }}"
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "Nico's Telephone Battery Level is {{ states('sensor.batteria_telefono_nico') }}%"

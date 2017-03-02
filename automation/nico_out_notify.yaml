@@ -1,10 +1,10 @@
  alias: Nico is going out - Notification
  trigger:
-   platform: state
-   entity_id: device_tracker.nico_nico
-   from: 'home'
-   to: 'not_home'
+    platform: zone
+    entity_id: device_tracker.nico_nico
+    zone: zone.home
+    event: leave    
  action:
-  service: notify.telegram_bot
+  service: notify.homenicoassistant_bot
   data:
     message: "Nico is going out at {{ states('sensor.date__time') }}"

@@ -14,28 +14,44 @@ homeassistant:
   elevation: 47
   customize: !include_dir_merge_named customizations
 
-############################################################
-#
-# Components
-#
-############################################################
+###################################################
+#                                                 #
+#                   IFTTT                         #
+#                                                 #
+###################################################
 
+ifttt:
+  key: secretkey
 
 ####################################################
 #                                                  #
 #                     Enables             #
 #                                                  #
 ####################################################
-
+config:
 logger:
   default: warning
+  logs:
+    #homeassistant.components.light.yeelight: debug
+    #yeelight: debug
+    homeassistant.components: warning
+    homeassistant.components.rfxtrx: debug
+    homeassistant.components.device_tracker: warning
+    homeassistant.components.camera: warning
+    homeassistant.components.switch: info
+    homeassistant.components.automation: warning
+    homeassistant.components.scene: warning
 history:
+recorder:
+  purge_days: 7
+  db_url: secret
 discovery:
 sun:
 conversation:
 logbook:
 frontend:
 updater:
+
 
 ############################################################
 #
@@ -52,16 +68,14 @@ media_player: !include media_player.yaml
 switch: !include switch.yaml
 notify: !include notify.yaml
 group: !include group.yaml
-http: !include httpconfig.yaml
+http: !include http.yaml
 zone: !include zones.yaml
 mqtt: !include mqtt.yaml
 shell_command: !include shell_commands.yaml
 script: !include scripts.yaml
 weblink: !include weblink.yaml
 camera: !include camera.yaml
-google: !include google.yaml
-google_calendars: !include google_calendars.yaml
-
+binary_sensor: !include binary_sensor.yaml
 
 # Dir List
 
@@ -70,10 +84,22 @@ scene: !include_dir_list scene
 
 
 ############################################################
-#
+#                                                          #
 #              Input Slider and Boolean                    #
-#
+#                                                          #
 ############################################################
 
 input_slider: !include input_slider.yaml
 input_boolean: !include input_boolean.yaml
+
+####################################################
+#                                                  #
+#                     TTS                          #
+#                                                  #
+####################################################
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tts
+    time_memory: 300
+    language: 'it'

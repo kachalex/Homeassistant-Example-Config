@@ -3,6 +3,6 @@ trigger:
   platform: state
   entity_id: updater.updater
 action:
-  service: notify.telegram_bot
+  service: notify.homenicoassistant_bot
   data:
     message: "Update for Home Assistant is available."
