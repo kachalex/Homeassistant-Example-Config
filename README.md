@@ -18,5 +18,5 @@ Devices I have :
 - Yeelight RGB and White Bulb
 
 
-![alt text](screenshots/hass1.png "Screenshot Example")
-![alt text](screenshots/hass2.png "Screenshot Example")
+![alt text](screenshots/hass01.png "Screenshot Example")
+![alt text](screenshots/hass02.png "Screenshot Example")
