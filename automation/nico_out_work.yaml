@@ -20,6 +20,6 @@
        message: "Nico is going out from Work at {{ states('sensor.date__time') }}"
    - service: notify.homenicoassistant_bot
      data_template:
-      message: >
-        "Nico just changed from {{ trigger.from_state.state }}
-        to {{ trigger.to_state.state }}"
+       message: >
+         "Nico just changed from {{ trigger.from_state.state }}
+          to {{ trigger.to_state.state }}"
