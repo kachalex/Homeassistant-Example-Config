@@ -1,0 +1,19 @@
+  alias: Lights Self Shutdown
+  trigger:
+    - platform: state
+      entity_id:
+        - light.kitchen__white
+        - light.room__nico__rgb
+      state: 'on'
+      for: '00:20:00'
+    - platform: state
+      entity_id:
+        - light.lounge__door__rgb
+        - light.lounge__sofa__rgb
+        - light.lounge__window__white
+      state: 'on'
+      for: '02:00:00'
+  action:
+    - service: light.turn_off
+      data_template:
+        entity_id: " {{ trigger.entity_id }} "
