@@ -16,7 +16,7 @@ Devices I have :
 - Synology NAS
 - Foscam R2 Camera
 - Yeelight RGB and White Bulb
-- 
+- Efergy for Energy cost monitor
 
 ![alt text](screenshots/hass01.png "Screenshot Example")
 ![alt text](screenshots/hass02.png "Screenshot Example")
