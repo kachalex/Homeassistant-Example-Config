@@ -4,7 +4,6 @@ Home assistant Configuration (YAMLs)
 
 This is my Home Assistant Configuration created with a Docker Installation on a Synology DSM 713+ with an expanded 4GB ram.
 
-Devices I have :
 
 - Android Devices (iPads, iPods, iPhones)
 - Owntracks for presence detection and GPS logging
@@ -17,6 +16,7 @@ Devices I have :
 - Foscam R2 Camera
 - Yeelight RGB and White Bulb
 - Efergy for Energy cost monitor
+- Telegram Notification
 
 ![alt text](screenshots/hass01.png "Screenshot Example")
 ![alt text](screenshots/hass02.png "Screenshot Example")
