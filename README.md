@@ -9,10 +9,8 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - Owntracks for presence detection and GPS logging
 - Mitsubishi Air Conditioner
 - Belkin IR Blaster - Mini R3
-- Andorid TV
-- Sony Bravia TV and Chromecast
+- Sony Bravia Android TV and Chromecast
 ![alt text](screenshots/player01.png "Player View")
-
 - Fritbox and Presence detection
 - Synology NAS
 - Foscam R2 Camera
@@ -21,7 +19,6 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - Efergy for Energy cost monitor
 ![alt text](screenshots/efergy01.png "Efergy Example")
 ![alt text](screenshots/efergy02.png "Efergy Example")
-
 - Telegram Notification
 - FitBit Integration
 ![alt text](screenshots/fitbit01.png "Efergy Example")
