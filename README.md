@@ -21,6 +21,11 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 
 - Telegram Notification
 - FitBit Integration
+![alt text](screenshots/fitbit01.png "Efergy Example")
 
-![alt text](screenshots/hass01.png "Screenshot Example")
+- Active Weather Map
 ![alt text](screenshots/hass02.png "Screenshot Example")
+
+- View Example
+![alt text](screenshots/hass01.png "Screenshot Example")
+
