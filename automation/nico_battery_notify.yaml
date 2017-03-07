@@ -1,10 +1,16 @@
  alias: Nico Battery Low - Notification
  trigger:
-   - platform: time
-     minutes: '/30'
-     seconds: 00
-   - platform: template
-   value_template: '{{ states.device_tracker.nico_nico.attributes.battery < 30 }}'
+    platform: time
+    # You can also match on interval. This will match every 15 minutes
+    minutes: '/15'
+    seconds: 00
+
+ condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: "{{ states.device_tracker.nico_nico.attributes.battery < 30 }}" 
+
  action:
    - service: notify.homenicoassistant_bot
      data:
