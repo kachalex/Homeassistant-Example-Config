@@ -10,11 +10,14 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - Mitsubishi Air Conditioner
 - Belkin IR Blaster - Mini R3
 - Andorid TV
-- Sony Bravia TV
-- Fritbox
+- Sony Bravia TV and Chromecast
+![alt text](screenshots/player01.png "Player View")
+
+- Fritbox and Presence detection
 - Synology NAS
 - Foscam R2 Camera
-- Yeelight RGB and White Bulb
+- Yeelight RGB and White Bulb and Hass Scenes
+![alt text](screenshots/lights01.png "Lights View")
 - Efergy for Energy cost monitor
 ![alt text](screenshots/efergy01.png "Efergy Example")
 ![alt text](screenshots/efergy02.png "Efergy Example")
