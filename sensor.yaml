@@ -5,10 +5,46 @@
   value_template: '{{ value_json.batt }}'
 
 - platform: mqtt
-  state_topic: "owntracks/mamma/mamma"
+  state_topic: "owntracks/Mamma/Mamma"
   name: "Batteria Telefono Mamma"
   unit_of_measurement: "%"
   value_template: '{{ value_json.batt }}'
+
+- platform: fitbit
+  monitored_resources:
+    - activities/activityCalories
+    - activities/calories
+    - activities/caloriesBMR
+    - activities/distance
+    - activities/elevation
+    - activities/floors
+    - activities/heart
+    - activities/minutesFairlyActive
+    - activities/minutesLightlyActive
+    - activities/minutesSedentary
+    - activities/minutesVeryActive
+    - activities/steps
+    - activities/tracker/activityCalories
+    - activities/tracker/calories
+    - activities/tracker/distance
+    - activities/tracker/elevation
+    - activities/tracker/floors
+    - activities/tracker/minutesFairlyActive
+    - activities/tracker/minutesLightlyActive
+    - activities/tracker/minutesSedentary
+    - activities/tracker/minutesVeryActive
+    - activities/tracker/steps
+    - body/bmi
+    - body/fat
+    - body/weight
+    - sleep/awakeningsCount
+    - sleep/efficiency
+    - sleep/minutesAfterWakeup
+    - sleep/minutesAsleep
+    - sleep/minutesAwake
+    - sleep/minutesToFallAsleep
+    - sleep/startTime
+    - sleep/timeInBed
 
 - platform: speedtest
   minute:
@@ -25,7 +61,7 @@
     - 30
 
 - platform: openweathermap
-  api_key: #API_Key
+  api_key: 173970110fc03faf1ef5aa04dce10a5e
   monitored_conditions:
       - weather
       - temperature
@@ -37,9 +73,9 @@
       - snow
 
 - platform: synologydsm
-  host: xxx.xxx.xxx.xxx
-  #username: user
-  #password: password
+  host: 10.10.10.200
+  username: hass
+  password: password123
   monitored_conditions:
     - cpu_total_load
     - cpu_other_load
@@ -71,8 +107,14 @@
     - time_date
     - time_utc
 
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.alarmhour") | int, states("input_slider.alarmminutes") | int) }}'
+
 - platform: efergy
-  app_token: APP_TOKEN
+  app_token: HJcsbmwQPfzMV_7coJaEwps2hW6LNCud
   utc_offset: 120
   monitored_variables:
     - type: instant_readings
@@ -80,9 +122,11 @@
     - type: cost
       period: day
       currency: €
+    - type: amount
+      period: day
 
 - platform: fritzbox_netmonitor
-  host: xx.xx.xx.xx
+  host: 10.10.10.1
   resources:
     - type: is_linked
     - type: is_connected
