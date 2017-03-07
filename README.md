@@ -16,7 +16,11 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - Foscam R2 Camera
 - Yeelight RGB and White Bulb
 - Efergy for Energy cost monitor
+![alt text](screenshots/efergy01.png "Efergy Example")
+![alt text](screenshots/efergy02.png "Efergy Example")
+
 - Telegram Notification
+- FitBit Integration
 
 ![alt text](screenshots/hass01.png "Screenshot Example")
 ![alt text](screenshots/hass02.png "Screenshot Example")
