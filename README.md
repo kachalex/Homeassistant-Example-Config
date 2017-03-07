@@ -23,7 +23,7 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - FitBit Integration
 ![alt text](screenshots/fitbit01.png "Efergy Example")
 
-- Active Weather Map
+- Active Weather Map and International Space Station Integration
 ![alt text](screenshots/hass02.png "Screenshot Example")
 
 - View Example
