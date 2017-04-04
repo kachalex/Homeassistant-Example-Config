@@ -7,6 +7,7 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 
 - Android Devices (iPads, iPods, iPhones)
 - Owntracks for presence detection and GPS logging
+![alt text](screenshots/hass02.png "Screenshot Example")
 
 - Mitsubishi Air Conditioner and Belkin IR Blaster - Mini R3
 .   ![alt text](screenshots/ir01.png "Player View")
@@ -26,7 +27,8 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 
 - Telegram Notification
 - FitBit Integration
-![alt text](screenshots/fitbit01.png "Efergy Example")
+
+![alt text](screenshots/fitbit01.png "Fitbit Example")
 
 - Active Weather Map and International Space Station Integration
 ![alt text](screenshots/hass02.png "Screenshot Example")
