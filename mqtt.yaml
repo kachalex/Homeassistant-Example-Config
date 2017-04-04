@@ -1,2 +1,4 @@
-broker: xx.xx.xx.xxx
+broker: 10.10.10.200
 port: 1883
+discovery: true
+discovery_prefix: !secret discoveryprefix

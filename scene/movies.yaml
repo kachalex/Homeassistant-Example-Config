@@ -1,14 +1,12 @@
-name: Movies - Lounge
-entities:
-  light.lounge__sofa__rgb:
-    state: on
-    rgb_color: [65, 105, 225]
-    brightness: 80
-  light.lounge__window__white:
-    state: on
-    rgb_color: [65, 105, 225]
-    brightness: 80
-  light.lounge__door__rgb:
-    state: on
-    rgb_color: [65, 105, 225]
-    brightness: 80
+- name: Movies - Lounge
+  entities:
+    light.lounge__sofa__rgb:
+      state: on
+      color_name: 'blue'
+      brightness: 120
+    light.lounge__window__white:
+      state: off
+    light.lounge__door__rgb:
+      state: on
+      color_name: 'blue'
+      brightness: 120

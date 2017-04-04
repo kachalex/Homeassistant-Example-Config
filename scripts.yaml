@@ -8,13 +8,14 @@
 
 ####NOTIFICATIONS AND ALERTS####
 restart_ha: !include scripts/restart_ha.yaml
-sunrise: !include scripts/sunrise.yaml
-sunset: !include scripts/sunset.yaml
+#sunrise: !include scripts/sunrise.yaml
+#sunset: !include scripts/sunset.yaml
 low_battery: !include scripts/low_battery.yaml
-
+#scene_notify: !include scripts/scene_notify.yaml
 ####PARTY
 
 ####MEDIA####
+voice_notify: !include scripts/voice_notify.yaml
 
 ####Cars####
 

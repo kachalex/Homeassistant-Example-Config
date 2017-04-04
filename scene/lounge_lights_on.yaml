@@ -1,15 +1,13 @@
-name: Lights ON - Lounge
-entities:
-  light.lounge__sofa__rgb:
-    state: on
-    rgb_color: [254, 254, 254]
-    color_temp: 154
-    brightness: 254
-  light.lounge__window__white:
-    state: on
-    brightness: 254
-  light.lounge__door__rgb:
-    state: on
-    rgb_color: [254, 254, 254]
-    color_temp: 154
-    brightness: 254
+- name: Lights ON - Lounge
+  entities:
+    light.lounge__sofa__rgb:
+      state: on
+      rgb_color: [255, 255, 255]
+      brightness: 255
+    light.lounge__window__white:
+      state: on
+      brightness: 255
+    light.lounge__door__rgb:
+      state: on
+      rgb_color: [255, 255, 255]
+      brightness: 255

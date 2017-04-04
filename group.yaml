@@ -14,6 +14,7 @@ default_view:
    - group.Entertainment
    - group.salone_video_camera
    - group.family
+   - group.Telephones_battery
    #- group.efergy
    - group.ac
    - group.wake_on_lan
@@ -70,8 +71,10 @@ Settings:
   name: Settings
   icon: mdi:settings
   entities:
+  - group.triggers
   - group.wake_on_lan
   - group.scripts
+  - group.automation_tasks
 
 clock:
   view: yes
@@ -89,11 +92,11 @@ Synology:
   - group.synology_memory_status
   - group.synology_disk_status
 
-#Miscellaneous:
-  #view: yes
-  #name: Restart Home Assistant
-  #entities:
-  #- script.restart_ha
+Miscellaneous:
+  view: yes
+  name: Restart Home Assistant
+  entities:
+  - script.restart_ha
 
 Nicos:
   view: yes
@@ -139,6 +142,12 @@ Scenes:
     - scene.lights_on__lounge
     - scene.lights_off__lounge
     - scene.romantic__nico
+    - scene.tv_time
+    - input_boolean.tv_time
+    #- scene.month_st_patty_colors
+    #- scene.month_standard_colors
+    #- scene.month_valentine_colors
+
 
 AC:
   - switch.air_conditioner__heat_30
@@ -178,8 +187,11 @@ Date:
 Family:
   entities:
     - device_tracker.nico_nico
-    - sensor.batteria_telefono_nico
     - device_tracker.mamma_mamma
+    - device_tracker.iphonemarie
+
+Telephones Battery: 
+    - sensor.batteria_telefono_nico
     - sensor.batteria_telefono_mamma
     
 Salone Video Camera:
@@ -220,6 +232,7 @@ Scripts:
   - script.low_battery
   - script.sunrise
   - script.sunset
+  - script.voice_notify
 
 Synology CPUs Status:
   - sensor.cpu_load_total
@@ -257,13 +270,6 @@ Synology Disk Status:
 fritz:
   - sensor.fritz_netmonitor
 
-alarmclock:
-  - automation.wake_me_up
-  - sensor.alarm_time
-  - input_slider.alarmhour
-  - input_slider.alarmminutes
-  - input_boolean.alarmweekday
-
 Dispositivi Mobili:
   entities:
     - device_tracker.mammasgs3
@@ -293,22 +299,39 @@ Dispositivi fissi Casa Nico:
      - device_tracker.efergyengage
      - device_tracker.broadlinkrmminifc0109
 
-#Automation Tasks:
-  #- automation.away_mode_on
-  #- automation.presence_notification
-  #- automation.light_on_sunset
-  #- automation.mamma_at_home__notification
-  #- automation.mamma_outside_home__notification
-  #- automation.nico_at_home__notification
-  #- automation.nico_at_work__notification
-  #- automation.nico_is_going_out__notification
-  #- automation.nico_out_from_work__notification
-  #- automation.nico_at_papas_home__notification
-  #- automation.nico_leaving_papas_home__notification
-  #- automation.notify_on_sunrise
-  #- automation.notify_on_sunset
-  #- automation.owntracks_refresh
-  #- automation.update_available_notifications
-  #- automation.device_status
-  #- automation.home_assistant_start__notify
-  #- automation.turn_off_light_at_midnight
+Automation Tasks:
+  - automation.ac__morning__off
+  - automation.ac__morning__on
+  - automation.tv_time
+  - automation.tv_time_off
+  - automation.automation_24
+  - automation.flush_tts_cache
+  - automation.home_assistant_start__notify
+  - automation.light_on_sunset
+  - automation.lights_self_shutdown
+  - automation.login_failure
+  - automation.mamma_at_home__notification
+  - automation.mamma_battery_low__notification
+  - automation.mamma_outside_home__notification
+  - automation.mamma_outside_home__notification_2
+  - automation.maria_at_home__notification
+  - automation.nico_at_home__notification
+  - automation.nico_at_papas_home__notification
+  - automation.nico_at_work__notification
+  - automation.nico_battery_low__notification
+  - automation.nico_is_going_out__notification
+  - automation.nico_leaving_papas_home__notification
+  - automation.nico_out_from_work__notification
+  - automation.no_one_at_home__notification
+  - automation.notify_on_sunrise
+  - automation.notify_on_sunset
+  - automation.owntracks_refresh
+  - automation.people_greeting
+  - automation.presence__notification
+  - automation.turn_off_light_at_midnight
+  - automation.turn_on_light__weekdays__morning__nicos_room
+  - automation.update_available_notifications
+
+Triggers:
+  - input_select.log_level
+  #- input_boolean.tv_time

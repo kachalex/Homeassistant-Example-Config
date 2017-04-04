@@ -15,6 +15,6 @@
       - thu
       - fri
   action:
-    service: notify.homenicoassistant_bot
-    data:
-      message: "Nico at Work at {{ states('sensor.date__time') }}"
+  -  service: notify.homenicoassistant_bot
+     data:
+       message: "Nico at Work at {{ states('sensor.date__time') }}"

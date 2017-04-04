@@ -7,4 +7,4 @@
  action:
   service: notify.homenicoassistant_bot
   data:
-    message: "Nico is going out at {{ states('sensor.date__time') }}"
+    message: "Nico is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"

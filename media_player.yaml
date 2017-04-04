@@ -1,5 +1,4 @@
-- platform: cast
-  host: xx.xx.xx.xxx
-- platform: samsungtv
-  host: xx.xx.xx.xxx
+#- platform: cast
+  #host: 10.10.10.215
 - platform: braviatv
+  host: 10.10.10.215

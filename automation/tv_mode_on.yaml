@@ -1,0 +1,43 @@
+######################################################################
+##  TV Time at sunset or 8pm.  Whichever is later. Credits CCostanzo
+######################################################################
+
+  alias: TV Time
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '+02:00:00'
+    - platform: state
+      entity_id: input_boolean.TV_time
+      state: 'on'
+      from: 'off'
+    - platform: state
+      entity_id: sensor.androidtvkd55xd9305lan
+      state: 'Online'
+    - platform: time
+      after: '20:00:00'
+
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: home
+      - condition: state
+        entity_id: sensor.androidtvkd55xd9305lan
+        state: 'Online'
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      #- condition: state
+        #entity_id: input_boolean.guest_mode
+        #state: 'off'
+
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tv_time
+    - service: scene.turn_on
+      entity_id: scene.tv_time
+    - service: notify.homenicoassistant_bot
+      data:
+        message: "TV Mode On"

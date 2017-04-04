@@ -12,4 +12,4 @@
      entity_id: group.lights
    - service: notify.homenicoassistant_bot
      data:
-       message: "Sunset - Lights ON at {{ states('sensor.batteria_telefono_nico') }}"
+       message: "Sunset - Lights ON at {{ states('sensor.date__time') }}"

@@ -1,6 +1,6 @@
-name: Romantic - Nico
-entities:
-  light.room__nico__rgb:
-    state: on
-    rgb_color: [220, 20, 60]
-    brightness: 200
+- name: Romantic - Nico
+  entities:
+    light.room__nico__rgb:
+      state: on
+      color_name: red
+      brightness: 200

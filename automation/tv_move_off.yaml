@@ -1,0 +1,29 @@
+######################################################################
+##  Turn off the Living room lights when the TV is turned off.
+######################################################################
+
+  alias: TV Time off
+  trigger:
+    - platform: state
+      entity_id: sensor.androidtvkd55xd9305lan
+      state: 'Offline'
+
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      #- condition: state
+        #entity_id: input_boolean.guest_mode
+        #state: 'off'
+
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.lounge__sofa__rgb
+        - light.lounge__window__white
+        - light.lounge__door__rgb
+    - service: notify.homenicoassistant_bot
+      data:
+        message: "TV Mode Off"

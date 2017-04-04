@@ -46,6 +46,13 @@
     - sleep/startTime
     - sleep/timeInBed
 
+- platform: waqi
+  token: !secret waqi
+  locations:
+    - guidonia
+  #stations:
+    #- roma
+
 - platform: speedtest
   minute:
     - 0
@@ -61,7 +68,7 @@
     - 30
 
 - platform: openweathermap
-  api_key: 173970110fc03faf1ef5aa04dce10a5e
+  api_key: !secret openweathermap
   monitored_conditions:
       - weather
       - temperature
@@ -74,8 +81,8 @@
 
 - platform: synologydsm
   host: 10.10.10.200
-  username: hass
-  password: password123
+  username: !secret synology_user
+  password: !secret synology_pwd
   monitored_conditions:
     - cpu_total_load
     - cpu_other_load
@@ -112,9 +119,13 @@
     alarm_time:
       friendly_name: 'Time'
       value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.alarmhour") | int, states("input_slider.alarmminutes") | int) }}'
+    
+    androidtvkd55xd9305lan:
+      friendly_name: 'Sony Bravia - TV'
+      value_template: "{{ 'Online' if is_state('device_tracker.androidtvkd55xd9305lan', 'home') else 'Offline' }}"
 
 - platform: efergy
-  app_token: HJcsbmwQPfzMV_7coJaEwps2hW6LNCud
+  app_token: !secret efergy_token
   utc_offset: 120
   monitored_variables:
     - type: instant_readings

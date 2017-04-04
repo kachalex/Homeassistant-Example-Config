@@ -1,15 +1,15 @@
-############################################################
-#
-# Home Assistant Main Configuration File
-#
-############################################################
+###################################################
+#                                                 #
+# Home Assistant Main Configuration File          #
+#                                                 #
+###################################################
 
 homeassistant:
-  name: Nico - Casa
+  name: !secret name
   temperature_unit: C
-  time_zone: Europe/Vienna
-  latitude: TOPsecret
-  longitude: TOPsecret
+  time_zone: !secret timezone
+  latitude: !secret latitude
+  longitude: !secret longitude
   unit_system: metric
   elevation: 47
   customize: !include_dir_merge_named customizations
@@ -21,45 +21,33 @@ homeassistant:
 ###################################################
 
 ifttt:
-  key: secretkey
+  key: !secret ifttt_key
 
 ####################################################
 #                                                  #
-#                     Enables             #
+#                     Enables                      #
 #                                                  #
 ####################################################
 config:
 logger:
-  default: warning
+  default: critical
   logs:
-    #homeassistant.components.light.yeelight: debug
-    #yeelight: debug
-    homeassistant.components: warning
-    homeassistant.components.rfxtrx: debug
-    homeassistant.components.device_tracker: warning
-    homeassistant.components.camera: warning
-    homeassistant.components.switch: info
-    homeassistant.components.automation: warning
-    homeassistant.components.scene: warning
+    homeassistant.components.device_tracker: critical
+    homeassistant.components.camera: critical
+    homeassistant.components.automation: info
+    homeassistant.components.light: info
+    homeassistant.components.sensor: info
+    homeassistant.components.scene: info
 history:
 recorder:
   purge_days: 7
-  db_url: secret
+  db_url: !secret dburl
 discovery:
 sun:
 conversation:
 logbook:
 frontend:
 updater:
-
-
-############################################################
-#
-#                       Includes
-#
-############################################################
-
-# Single Files
 
 light: !include light.yaml
 device_tracker: !include device_tracker.yaml
@@ -80,17 +68,17 @@ binary_sensor: !include binary_sensor.yaml
 # Dir List
 
 automation: !include_dir_list automation
-scene: !include_dir_list scene
+scene: !include_dir_merge_list scene
 
 
-############################################################
-#                                                          #
-#              Input Slider and Boolean                    #
-#                                                          #
-############################################################
+####################################################
+#                                                  #
+#              Input Slider and Boolean            #
+#                                                  #
+####################################################
 
-input_slider: !include input_slider.yaml
-input_boolean: !include input_boolean.yaml
+input_boolean: !include_dir_merge_named input_boolean
+input_select: !include_dir_merge_named input_select
 
 ####################################################
 #                                                  #
@@ -99,7 +87,19 @@ input_boolean: !include input_boolean.yaml
 ####################################################
 tts:
   - platform: google
-    cache: true
-    cache_dir: /tts
-    time_memory: 300
-    language: 'it'
+    #cache: true
+    #cache_dir: /tts
+    #time_memory: 300
+    #language: 'en'
+
+####################################################
+#                                                  #
+#               Panel Iframe                       #
+#                                                  #
+####################################################
+
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://localhost:8123/local/home-assistant-mdi/home-assistant-mdi.html

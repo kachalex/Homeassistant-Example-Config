@@ -11,5 +11,11 @@
        - thu
        - fri
   action:
-      service: switch.turn_off
-      entity_id: switch.air_conditioner
+    - service: switch.turn_off
+      entity_id: switch.air_conditioner__heat_30
+    - service: notify.homenicoassistant_bot
+      data:
+        message: "AC Morning OFF - Heat 30 - Automation"
+    - service: notify.homenicoassistant_bot
+      data:
+        message: "AC Morning OFF - Heat 30 - Automation. {{ trigger.entity_id }}"
