@@ -11,7 +11,8 @@ This is my Home Assistant Configuration created with a Docker Installation on a 
 - Mitsubishi Air Conditioner and Belkin IR Blaster - Mini R3
 ![alt text](screenshots/ir01.png "Player View")
 
-- Sony Bravia Android TV and Chromecast
+- Sony Bravia Android TV and Chromecast TV 
+
 ![alt text](screenshots/player01.png "Player View")
 
 - Fritbox and Presence detection
