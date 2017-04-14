@@ -3,19 +3,19 @@
       10.10.10.239:
         name: Lounge - Sofa - RGB
         #transition: 1000
-        #use_music_mode: False
+        use_music_mode: True
         #save_on_change: False  
       10.10.10.218:
         name: Lounge - Door - RGB
         #transition: 1000
-        #use_music_mode: True
+        use_music_mode: True
         #save_on_change: False
       10.10.10.219:
         name: Lounge - Window - White
       10.10.10.216:
         name: Room - Nico - RGB
-        #transition: 1000
-        #use_music_mode: False
+        transition: 3000
+        use_music_mode: True
         #save_on_change: False
       10.10.10.213:
         name: Kitchen - White
