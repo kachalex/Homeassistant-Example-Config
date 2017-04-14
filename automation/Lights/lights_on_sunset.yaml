@@ -1,4 +1,4 @@
-  alias: 'Light on Sunset'  
+- alias: 'Light on Sunset'  
   trigger:
     platform: sun
     event: sunset

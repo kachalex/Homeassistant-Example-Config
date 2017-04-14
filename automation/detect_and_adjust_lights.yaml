@@ -1,4 +1,4 @@
-  alias: detect lights and adjust the brightness when turned on based on time
+- alias: detect lights and adjust the brightness when turned on based on time
   trigger:
     - platform: event
       event_type: state_changed

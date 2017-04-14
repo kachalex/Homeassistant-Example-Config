@@ -1,4 +1,4 @@
-  alias: Log Level
+- alias: Log Level
   trigger:
     platform: state
     entity_id: input_select.log_level

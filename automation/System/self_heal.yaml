@@ -1,4 +1,4 @@
-  alias: Flush TTS Cache
+- alias: Flush TTS Cache
   hide_entity: True
   trigger:
     platform: time

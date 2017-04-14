@@ -1,4 +1,4 @@
-  alias: Lights Self Shutdown
+- alias: Lights Self Shutdown
   trigger:
     - platform: state
       entity_id:

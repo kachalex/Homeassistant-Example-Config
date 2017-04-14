@@ -1,4 +1,4 @@
-  alias: State Changed - Notification  
+- alias: State Changed - Notification  
   trigger:
     platform: time
     after: '05:30:00'

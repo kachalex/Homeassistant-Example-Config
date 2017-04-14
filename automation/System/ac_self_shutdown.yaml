@@ -1,4 +1,4 @@
-  alias: AC Self Shutdown - Heat
+- alias: AC Self Shutdown - Heat
   trigger:
     - platform: state
       entity_id:

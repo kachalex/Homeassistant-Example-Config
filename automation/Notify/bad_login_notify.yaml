@@ -1,4 +1,4 @@
-  alias: Login Failure
+- alias: Login Failure
   hide_entity: True
   trigger:
     platform: template

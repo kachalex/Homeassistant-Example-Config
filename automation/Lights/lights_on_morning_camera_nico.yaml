@@ -1,4 +1,4 @@
-  alias: 'Turn on Light - WeekDays - Morning - Nicos Room '
+- alias: 'Turn on Light - WeekDays - Morning - Nicos Room '
   trigger:
     platform: state
     entity_id: device_tracker.nicosgs6

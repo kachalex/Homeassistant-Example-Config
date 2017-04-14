@@ -30,11 +30,11 @@ ifttt:
 ####################################################
 config:
 logger:
-  default: critical
+  default: debug
   logs:
     homeassistant.components.device_tracker: critical
-    homeassistant.components.camera: critical
-    homeassistant.components.automation: info
+    homeassistant.components.camera: info
+    homeassistant.components.automation: critical
     homeassistant.components.light: info
     homeassistant.components.sensor: info
     homeassistant.components.scene: info
@@ -67,7 +67,7 @@ binary_sensor: !include binary_sensor.yaml
 
 # Dir List
 
-automation: !include_dir_list automation
+automation: !include_dir_merge_list automation
 scene: !include_dir_merge_list scene
 
 
@@ -77,8 +77,9 @@ scene: !include_dir_merge_list scene
 #                                                  #
 ####################################################
 
-input_boolean: !include_dir_merge_named input_boolean
+#input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select
+input_slider: !include_dir_merge_named input_slider
 
 ####################################################
 #                                                  #
@@ -102,4 +103,4 @@ panel_iframe:
   mdiindex:
     title: MDI Icon Index
     icon: mdi:vector-square
-    url: https://localhost:8123/local/home-assistant-mdi/home-assistant-mdi.html
+    url: http://localhost:8123/local/home-assistant-mdi/home-assistant-mdi.html
