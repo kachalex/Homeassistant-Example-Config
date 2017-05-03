@@ -1,8 +1,8 @@
 - alias: Nico Battery Low - Notification
   trigger:
      platform: time
-     # You can also match on interval. This will match every 15 minutes
-     minutes: '/15'
+     # You can also match on interval. This will match every 45 minutes
+     minutes: '/45'
      seconds: 00
 
   condition:
@@ -22,8 +22,8 @@
 - alias: Mamma Battery Low - Notification
   trigger:
      platform: time
-     # You can also match on interval. This will match every 15 minutes
-     minutes: '/15'
+     # You can also match on interval. This will match every 45 minutes
+     minutes: '/45'
      seconds: 00
 
   condition:
