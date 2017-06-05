@@ -911,3 +911,73 @@
    - service: notify.homenicoassistant_bot
      data:
        message: "Sunset - Lights ON at {{ states('sensor.date__time') }}"
+
+
+####################################################
+#                                                  #
+#                   PC States                      #
+#                                                  #
+####################################################
+####################################################
+#                   PC restart                     #
+####################################################
+
+- id: PC Restart
+  alias: pc_restart
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Restart"
+  action:
+   - service: shell_command.restart_pc
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "PC Restart at {{ states('sensor.date__time') }}"  
+
+####################################################
+#                   PC Shutdown                    #
+####################################################
+
+- id: PC Restart
+  alias: pc_shutdown
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Shutdown"
+  action:
+   - service: shell_command.shutdown_pc
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "PC Shutdown at {{ states('sensor.date__time') }}"
+
+####################################################
+#                   PC Sleep                       #
+####################################################
+
+- id: PC Sleep
+  alias: pc_sleep
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Sleep"
+  action:
+   - service: shell_command.sleep_pc
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "PC Sleep at {{ states('sensor.date__time') }}"
+
+####################################################
+#                   PC Hibernate                   #
+####################################################
+
+- id: PC Hibernate
+  alias: pc_hibernate
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Hibernate"
+  action:
+   - service: shell_command.hibernate_pc
+   - service: notify.homenicoassistant_bot
+     data:
+       message: "PC Hibernated at {{ states('sensor.date__time') }}"
