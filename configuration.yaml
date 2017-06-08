@@ -30,17 +30,18 @@ ifttt:
 ####################################################
 config:
 logger:
-  default: debug
+  default: warn
   logs:
     homeassistant.components.device_tracker: critical
     homeassistant.components.camera: info
-    homeassistant.components.automation: critical
+    homeassistant.components.automation: debug
     homeassistant.components.light: info
     homeassistant.components.sensor: info
     homeassistant.components.scene: info
+    homeassistant.components.switch: info
 history:
 recorder:
-  purge_days: 7
+  purge_days: 30
   db_url: !secret dburl
 discovery:
 sun:
@@ -48,6 +49,7 @@ conversation:
 logbook:
 frontend:
 updater:
+#keyboard:
 
 light: !include light.yaml
 device_tracker: !include device_tracker.yaml
@@ -64,10 +66,17 @@ script: !include scripts.yaml
 weblink: !include weblink.yaml
 camera: !include camera.yaml
 binary_sensor: !include binary_sensor.yaml
+telegram_bot:
+  platform: polling
+  api_key: !secret telegram_apikey
+  allowed_chat_ids:
+    - !secret telegram_clientid
+
 
 # Dir List
 
 automation: !include_dir_merge_list automation
+#automation: !include automations.yaml
 scene: !include_dir_merge_list scene
 
 
@@ -98,9 +107,3 @@ tts:
 #               Panel Iframe                       #
 #                                                  #
 ####################################################
-
-panel_iframe:
-  mdiindex:
-    title: MDI Icon Index
-    icon: mdi:vector-square
-    url: http://localhost:8123/local/home-assistant-mdi/home-assistant-mdi.html
