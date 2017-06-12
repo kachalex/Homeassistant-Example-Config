@@ -1,3 +1,7 @@
+####################################################
+#                   Maria  Home                    #
+####################################################
+
 - alias: Maria at Home - Notification
   trigger:
      platform: state
@@ -9,7 +13,11 @@
    data:
      message: "Maria is at Home <3 <3 {{ states('sensor.date__time') }}"
 
-- alias: Mamma Outside Home - Notification
+####################################################
+#               Maria out Home                     #
+####################################################
+
+- alias: Maria Outside Home - Notification
   trigger:
      platform: state
      entity_id: device_tracker.iphonemarie

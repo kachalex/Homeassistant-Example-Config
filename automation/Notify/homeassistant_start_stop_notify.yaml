@@ -1,3 +1,7 @@
+####################################################
+#                  Hass Start                      #
+####################################################
+
 - alias: Home Assistant Start - Notify
   trigger:
     platform: event
@@ -6,6 +10,10 @@
     service: notify.homenicoassistant_bot
     data:
       message: "Home Assistant Start at {{ states('sensor.date__time') }}"
+
+####################################################
+#                  Hass Stop                       #
+####################################################
 
 - alias: Home Assistant Stop - Notify
   trigger:

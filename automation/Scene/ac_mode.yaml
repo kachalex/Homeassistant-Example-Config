@@ -1,3 +1,13 @@
+####################################################
+#                                                  #
+#                    Scenes                        #
+#                                                  #
+####################################################
+
+####################################################
+#                Air Conditioner                   #
+####################################################
+
 - alias: AC Mode OFF - Automation
   trigger:
     platform: state
@@ -34,4 +44,51 @@
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
-# need to add the cold and the cold morning automation
+
+- alias: AC Mode - Cold
+  trigger:
+    platform: state
+    entity_id: input_select.ac_mode
+    to: "Cold"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.air_conditioner__cold_18
+    - service: notify.homenicoassistant_bot
+      data_template:
+        message: >
+           "AC Mode  changed to: {{ trigger.to_state.state }}"
+
+- alias: AC Mode - Cold Morning
+  trigger:
+    platform: state
+    entity_id: input_select.ac_mode
+    to: "Cold Morning"
+  action:
+    - service: notify.homenicoassistant_bot
+      data_template:
+        message: >
+           "AC Mode  changed to: {{ trigger.to_state.state }}"
+
+- alias: AC Mode - Humidity
+  trigger:
+    platform: state
+    entity_id: input_select.ac_mode
+    to: "Himidity"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.air_conditioner__humidity
+    - service: notify.homenicoassistant_bot
+      data_template:
+        message: >
+           "AC Mode  changed to: {{ trigger.to_state.state }}"
+
+- alias: AC Mode - Humidity Morning
+  trigger:
+    platform: state
+    entity_id: input_select.ac_mode
+    to: "Humidity Morning"
+  action:
+    - service: notify.homenicoassistant_bot
+      data_template:
+        message: >
+           "AC Mode  changed to: {{ trigger.to_state.state }}"

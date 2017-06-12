@@ -1,3 +1,12 @@
+####################################################
+#                  Battery                         #
+#                Notifications                     #
+####################################################
+
+####################################################
+#                  Nico Battery                    #
+####################################################
+
 - alias: Nico Battery Low - Notification
   trigger:
      platform: time
@@ -18,6 +27,10 @@
     - service: notify.homenicoassistant_bot
       data:
         message: "Nico's Telephone Battery Level is {{ states('sensor.batteria_telefono_nico') }}%"
+
+####################################################
+#                  Mom Battery                     #
+####################################################
 
 - alias: Mamma Battery Low - Notification
   trigger:

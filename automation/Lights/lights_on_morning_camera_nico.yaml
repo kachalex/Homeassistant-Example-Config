@@ -1,3 +1,6 @@
+####################################################
+#            Lights Turn On Nico                   #
+####################################################
 - alias: 'Turn on Light - WeekDays - Morning - Nicos Room '
   trigger:
     platform: state

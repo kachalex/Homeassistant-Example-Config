@@ -1,3 +1,7 @@
+####################################################
+#                Notify Sunrise                    #
+####################################################
+
 - alias: Notify on sunrise
   trigger:
     platform: sun
@@ -11,6 +15,10 @@
     - service: notify.homenicoassistant_bot
       data:
         message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"
+
+####################################################
+#                Notify Sunset                     #
+####################################################
 
 - alias: Notify on sunset
   trigger:

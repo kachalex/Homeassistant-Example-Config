@@ -1,3 +1,6 @@
+####################################################
+#            Lights Midnight Shutdown              #
+####################################################
 - alias: 'Turn off Light at Midnight'
   trigger:
     platform: time

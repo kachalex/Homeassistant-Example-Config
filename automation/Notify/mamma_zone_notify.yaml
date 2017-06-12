@@ -1,3 +1,12 @@
+####################################################
+#                  Zone                            #
+#              Notifications                       #
+####################################################
+
+####################################################
+#                   Mom  Home                      #
+####################################################
+
 - alias: Mamma at Home - Notification
   trigger:
      platform: zone
@@ -8,6 +17,10 @@
    service: notify.homenicoassistant_bot
    data:
      message: "Mamma is at Home at {{ states('sensor.date__time') }}"
+
+####################################################
+#                   Mom Out Home                   #
+####################################################
 
 - alias: Mamma Outside Home - Notification
   trigger:

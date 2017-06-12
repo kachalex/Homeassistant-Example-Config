@@ -1,3 +1,12 @@
+####################################################
+#                     Room                         #
+#                     Nico                         #
+####################################################
+
+####################################################
+#               White Scene Nico                   #
+####################################################
+
 - alias: White Scene - Automation
   trigger:
     platform: state
@@ -10,6 +19,10 @@
       data_template:
         message: >
            "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+
+####################################################
+#               Romantic Scene Nico                #
+####################################################
 
 - alias: Romantic Scene - Automation
   trigger:
@@ -24,6 +37,10 @@
         message: >
            "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
 
+####################################################
+#               Movie Scene Nico                   #
+####################################################
+
 - alias: Movie Scene - Automation
   trigger:
     platform: state
@@ -36,6 +53,10 @@
       data_template:
         message: >
            "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+
+####################################################
+#               Gold Scene Nico                   #
+####################################################
 
 - alias: Gold Scene - Automation
   trigger:
@@ -50,6 +71,10 @@
         message: >
            "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
 
+####################################################
+#               Purple Scene Nico                 #
+####################################################
+
 - alias: Purple Scene - Automation
   trigger:
     platform: state
@@ -62,6 +87,10 @@
       data_template:
         message: >
            "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+
+####################################################
+#               Green Scene Nico                   #
+####################################################
 
 - alias: Green Scene - Automation
   trigger:

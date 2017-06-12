@@ -1,3 +1,7 @@
+####################################################
+#                  Nico Home                       #
+####################################################
+
 - alias: Nico at Home - Notification
   trigger:
      platform: zone
@@ -8,6 +12,10 @@
    service: notify.homenicoassistant_bot
    data:
      message: "Nico is at Home at {{ states('sensor.date__time') }}"
+
+####################################################
+#                  Nico Out Home                   #
+####################################################
 
 - alias: Nico is going out - Notification
   trigger:
@@ -20,6 +28,10 @@
    data:
      message: "Nico is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"
 
+####################################################
+#                  Nico Dad                        #
+####################################################
+
 - alias: Nico at Papa's Home - Notification
   trigger:
      platform: zone
@@ -31,6 +43,10 @@
    data:
      message: "Nico is at Papa's Home at {{ states('sensor.date__time') }}"
 
+####################################################
+#                  Nico Out Dad                    #
+####################################################
+
 -  alias: Nico leaving Papa's Home - Notification
    trigger:
       platform: zone
@@ -41,6 +57,10 @@
     service: notify.homenicoassistant_bot
     data:
       message: "Nico is going out from Papa's Home {{ states('sensor.date__time') }}"
+
+####################################################
+#                  Nico Work                       #
+####################################################
 
 - alias: Nico at Work - Notification
   trigger:
@@ -62,6 +82,10 @@
   -  service: notify.homenicoassistant_bot
      data:
        message: "Nico at Work at {{ states('sensor.date__time') }}"
+
+####################################################
+#                Nico out Work                     #
+####################################################
 
 - alias: Nico out from Work - Notification
   trigger:
