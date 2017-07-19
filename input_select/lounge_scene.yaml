@@ -1,5 +1,5 @@
-lounge_scene:
-  name: Lounge Scenes
+Living_scene:
+  name: Living Scenes
   options:
     - White
     - Romantic (Red)

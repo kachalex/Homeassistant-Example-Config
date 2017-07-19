@@ -7,6 +7,6 @@
               entity_id: group.scenes
               state: 'on'
 
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: " {{ trigger.entity_id }} is activated "

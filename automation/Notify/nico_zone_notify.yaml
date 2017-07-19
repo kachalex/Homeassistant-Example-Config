@@ -1,73 +1,81 @@
 ####################################################
-#                  Nico Home                       #
+#                  my Home                       #
 ####################################################
 
-- alias: Nico at Home - Notification
+- alias: my at Home - Notification
   trigger:
      platform: zone
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
      zone: zone.home
      event: enter
+  condition:
+     condition: time
+     after: '07:00:00'
+     before: '23:59:00'
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is at Home at {{ states('sensor.date__time') }}"
+     message: "my is at Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Out Home                   #
+#                  my Out Home                   #
 ####################################################
 
-- alias: Nico is going out - Notification
+- alias: my is going out - Notification
   trigger:
      platform: zone
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my     
      zone: zone.home
-     event: leave    
+     event: leave
+  condition:
+     condition: time
+     after: '07:00:00'
+     before: '23:59:00'         
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"
+     message: "my is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Dad                        #
+#                  my Dad                        #
 ####################################################
 
-- alias: Nico at Papa's Home - Notification
+- alias: my at Papa's Home - Notification
   trigger:
      platform: zone
      event: enter
      zone: zone.papa
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is at Papa's Home at {{ states('sensor.date__time') }}"
+     message: "my is at Papa's Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Out Dad                    #
+#                  my Out Dad                    #
 ####################################################
 
--  alias: Nico leaving Papa's Home - Notification
+-  alias: my leaving Papa's Home - Notification
    trigger:
       platform: zone
       event: leave
       zone: zone.papa
-      entity_id: device_tracker.nico_nico
+      entity_id: device_tracker.my_my
    action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
-      message: "Nico is going out from Papa's Home {{ states('sensor.date__time') }}"
+      message: "my is going out from Papa's Home {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Work                       #
+#                  my Work                       #
 ####################################################
 
-- alias: Nico at Work - Notification
+- alias: my at Work - Notification
   trigger:
     platform: zone
     event: enter
     zone: zone.work
-    entity_id: device_tracker.nico_nico
+    entity_id: device_tracker.my_my
   condition:
     condition: time
     after: '07:00:00'
@@ -79,20 +87,20 @@
       - thu
       - fri
   action:
-  -  service: notify.homenicoassistant_bot
+  -  service: notify.homemyassistant_bot
      data:
-       message: "Nico at Work at {{ states('sensor.date__time') }}"
+       message: "my at Work at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                Nico out Work                     #
+#                my out Work                     #
 ####################################################
 
-- alias: Nico out from Work - Notification
+- alias: my out from Work - Notification
   trigger:
     platform: zone
     event: leave
     zone: zone.work
-    entity_id: device_tracker.nico_nico
+    entity_id: device_tracker.my_my
   condition:
     condition: time
     after: '07:00:00'
@@ -104,6 +112,6 @@
       - thu
       - fri
   action:
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
-       message: "Nico is going out from Work at {{ states('sensor.date__time') }}"
+       message: "my is going out from Work at {{ states('sensor.date__time') }}"

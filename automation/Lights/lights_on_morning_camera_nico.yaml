@@ -1,10 +1,10 @@
 ####################################################
-#            Lights Turn On Nico                   #
+#            Lights Turn On my                   #
 ####################################################
-- alias: 'Turn on Light - WeekDays - Morning - Nicos Room '
+- alias: 'Turn on Light - WeekDays - Morning - mys Room '
   trigger:
     platform: state
-    entity_id: device_tracker.nicosgs6
+    entity_id: device_tracker.mysgs6
     to: 'home'
   condition:
     condition: time
@@ -18,4 +18,4 @@
       - fri
   action:
    service: homeassistant.turn_on
-   entity_id: light.room__nico__rgb
+   entity_id: light.room__my__rgb

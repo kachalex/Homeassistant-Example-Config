@@ -1,19 +1,19 @@
   - platform: yeelight
     devices:
       10.10.10.239:
-        name: Lounge - Sofa - RGB
+        name: Living - Sofa - RGB
         #transition: 1000
         use_music_mode: True
         #save_on_change: False  
       10.10.10.218:
-        name: Lounge - Door - RGB
+        name: Living - Door - RGB
         #transition: 1000
         use_music_mode: True
         #save_on_change: False
       10.10.10.219:
-        name: Lounge - Window - White
+        name: Living - Window - White
       10.10.10.216:
-        name: Room - Nico - RGB
+        name: Room - my - RGB
         transition: 3000
         use_music_mode: True
         #save_on_change: False

@@ -1,101 +1,101 @@
 ####################################################
-#              White Scene Lounge                  #
+#              White Scene Living                  #
 ####################################################
 
 - alias: White Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "White"
   action:
     - service: scene.turn_on
-      entity_id: scene.white__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.white__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#              Romantic Scene Lounge               #
+#              Romantic Scene Living               #
 ####################################################
 
 - alias: Romantic Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Romantic (Red)"
   action:
     - service: scene.turn_on
-      entity_id: scene.romantic__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.romantic__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#              Movie Scene Lounge                  #
+#              Movie Scene Living                  #
 ####################################################
 
 - alias: Movie Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Movie (Blue)"
   action:
     - service: scene.turn_on
-      entity_id: scene.movies__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.movies__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Gold Scene Lounge                  #
+#               Gold Scene Living                  #
 ####################################################
 
 - alias: Gold Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Gold"
   action:
     - service: scene.turn_on
-      entity_id: scene.gold__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.gold__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Purple Scene Lounge                #
+#               Purple Scene Living                #
 ####################################################
 
 - alias: Purple Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Purple"
   action:
     - service: scene.turn_on
-      entity_id: scene.purple__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.purple__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Green Scene Lounge                 #
+#               Green Scene Living                 #
 ####################################################
 
 - alias: Green Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Green"
   action:
     - service: scene.turn_on
-      entity_id: scene.green__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.green__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"

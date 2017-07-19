@@ -4,5 +4,5 @@
   host: xx.xx.xx.xxx
 - platform: wake_on_lan
   mac_address: 'xx-xx-xx-xx-xx-xx'
-  name: Nico-PC
+  name: my-PC
   host: xxx.xx.xx.xx

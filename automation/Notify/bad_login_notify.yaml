@@ -8,6 +8,6 @@
     platform: template
     value_template: "{{ states('persistent_notification.httplogin') != 'authentication' }}"
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
      message: 'Bad Login.. There was a Hack attempt! Go Check the GUI for details.'

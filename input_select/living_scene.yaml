@@ -1,5 +1,5 @@
-my_room_scene:
-  name: my Room Scenes
+living_scene:
+  name: Living Scenes
   options:
     - White
     - Romantic (Red)

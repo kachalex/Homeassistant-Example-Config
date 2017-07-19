@@ -1,0 +1,25 @@
+- alias: 'GPS Notify my'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/my'
+  action:
+  - service: notify.homemyassistant_bot
+    data:
+      message: 'my GPS Position'
+  - service: script.gps_telegram_my
+
+- alias: 'GPS Notify person'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/person'
+  action:
+  - service: notify.homemyassistant_bot
+    data:
+      message: 'person GPS Position'  
+  - service: script.gps_telegram_person

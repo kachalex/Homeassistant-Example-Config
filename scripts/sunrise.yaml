@@ -3,6 +3,6 @@ sequence:
   event_data:
     name: EVENT
     message: "SUNRISE"
-- service: notify.homenicoassistant_bot
+- service: notify.homemyassistant_bot
   data:
     message: "The sun is up! Good Morning! {{ states('sensor.date__time') }} "

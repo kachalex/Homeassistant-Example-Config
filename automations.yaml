@@ -20,7 +20,7 @@
     - service: switch.turn_off
       data_template:
         entity_id: " {{ trigger.entity_id }} "
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
           "{{ trigger.to_state.attributes.friendly_name }} just changed from {{ trigger.to_state.state }}
@@ -49,13 +49,13 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning ON - Heat 30 - Automation"
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "Air Conditioner ON. {{ trigger.entity_id }} Automation - AC Morning OFF"
-    #- service: notify.homenicoassistant_bot
+    #- service: notify.homemyassistant_bot
       #data_template:
         #message: >
           #"{{ trigger.to_state.attributes.friendly_name }} just changed from {{ trigger.to_state.state }}
@@ -80,10 +80,10 @@
   action:
     - service: switch.turn_off
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning OFF - Heat 30 - Automation"
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning OFF - Heat 30 - Automation. {{ trigger.entity_id }}"
 
@@ -96,7 +96,7 @@
   trigger:
     - platform: state
       entity_id:
-        - light.room__nico__rgb
+        - light.room__my__rgb
       state: 'on'
       for: '00:30:00'
     - platform: state
@@ -106,16 +106,16 @@
       for: '01:00:00'
     - platform: state
       entity_id:
-        - light.lounge__door__rgb
-        - light.lounge__sofa__rgb
-        - light.lounge__window__white
+        - light.Living__door__rgb
+        - light.Living__sofa__rgb
+        - light.Living__window__white
       state: 'on'
       for: '02:00:00'
   action:
     - service: light.turn_off
       data_template:
         entity_id: " {{ trigger.entity_id }} "
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
           "{{ trigger.to_state.attributes.friendly_name }} just changed from {{ trigger.to_state.state }}
@@ -174,7 +174,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
       message: "Update for Home Assistant is available."
 
@@ -188,7 +188,7 @@
     platform: state
     entity_id: input_select.who_cooks
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "Today Cook {{ trigger.to_state.state }}"
@@ -204,7 +204,7 @@
     platform: template
     value_template: "{{ states('persistent_notification.httplogin') != 'authentication' }}"
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
      message: 'Bad Login.. There was a Hack attempt! Go Check the GUI for details.'
 
@@ -214,11 +214,11 @@
 ####################################################
 
 ####################################################
-#                  Nico Battery                    #
+#                  my Battery                    #
 ####################################################
 
-- id: Nico_Battery
-  alias: Nico Battery Low - Notification
+- id: my_Battery
+  alias: my Battery Low - Notification
   trigger:
      platform: time
      # You can also match on interval. This will match every 45 minutes
@@ -229,23 +229,23 @@
      condition: or
      conditions:
        - condition: template
-         value_template: "{{ states.device_tracker.nico_nico.attributes.battery < 30 }}" 
+         value_template: "{{ states.device_tracker.my_my.attributes.battery < 30 }}" 
 
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
-        message: "Nico's Telephone is on low Battery at {{ states('sensor.date__time') }}"
-    - service: notify.homenicoassistant_bot
+        message: "my's Telephone is on low Battery at {{ states('sensor.date__time') }}"
+    - service: notify.homemyassistant_bot
       data:
-        message: "Nico's Telephone Battery Level is {{ states('sensor.batteria_telefono_nico') }}%"
+        message: "my's Telephone Battery Level is {{ states('sensor.batteria_telefono_my') }}%"
 
 
 ####################################################
-#                  Mom Battery                     #
+#                  person Battery                     #
 ####################################################
 
-- id: Mom_Battery
-  alias: Mamma Battery Low - Notification
+- id: person_Battery
+  alias: person Battery Low - Notification
   trigger:
      platform: time
      # You can also match on interval. This will match every 45 minutes
@@ -256,15 +256,15 @@
      condition: or
      conditions:
        - condition: template
-         value_template: "{{ states.device_tracker.mamma_mamma.attributes.battery < 30 }}"
+         value_template: "{{ states.device_tracker.person_person.attributes.battery < 30 }}"
 
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
-        message: "Mom's Telephone is on low Battery at {{ states('sensor.date__time') }}"
-    - service: notify.homenicoassistant_bot
+        message: "person's Telephone is on low Battery at {{ states('sensor.date__time') }}"
+    - service: notify.homemyassistant_bot
       data:
-        message: "Mom's Telephone Battery Level is {{ states('sensor.batteria_telefono_mamma') }}%"
+        message: "person's Telephone Battery Level is {{ states('sensor.batteria_telefono_person') }}%"
 
 ####################################################
 #                  Hass Start                      #
@@ -276,7 +276,7 @@
     platform: event
     event_type: homeassistant_start
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
       message: "Home Assistant Start at {{ states('sensor.date__time') }}"
 
@@ -290,7 +290,7 @@
     platform: event
     event_type: homeassistant_stop
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
       message: "Home Assistant Stop at {{ states('sensor.date__time') }}"
 
@@ -300,145 +300,145 @@
 ####################################################
 
 ####################################################
-#                   Mom  Home                      #
+#                   person  Home                      #
 ####################################################
 
-- id: mom_home
-  alias: Mamma at Home - Notification
+- id: person_home
+  alias: person at Home - Notification
   trigger:
      platform: zone
      event: enter
      zone: zone.home
-     entity_id: device_tracker.mamma_mamma
+     entity_id: device_tracker.person_person
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Mamma is at Home at {{ states('sensor.date__time') }}"
+     message: "person is at Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                   Mom Out Home                   #
+#                   person Out Home                   #
 ####################################################
 
-- id: mom_out_home
-  alias: Mamma Outside Home - Notification
+- id: person_out_home
+  alias: person Outside Home - Notification
   trigger:
      platform: zone
      event: leave
      zone: zone.home
-     entity_id: device_tracker.mamma_mamma
+     entity_id: device_tracker.person_person
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Mamma is going out at {{ states('sensor.date__time') }}"
+     message: "person is going out at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                   Maria  Home                    #
+#                   gf  Home                    #
 ####################################################
 
-- id: maria_home
-  alias: Maria at Home - Notification
+- id: gf_home
+  alias: gf at Home - Notification
   trigger:
      platform: state
      entity_id: device_tracker.iphonemarie
      from: 'not_home'
      to: 'home'
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Maria is at Home <3 <3 {{ states('sensor.date__time') }}"
+     message: "gf is at Home <3 <3 {{ states('sensor.date__time') }}"
 
 ####################################################
-#               Maria out Home                     #
+#               gf out Home                     #
 ####################################################
 
-- id: maria_out_home
-  alias: Maria Outside Home - Notification
+- id: gf_out_home
+  alias: gf Outside Home - Notification
   trigger:
      platform: state
      entity_id: device_tracker.iphonemarie
      from: 'home'
      to: 'not_home'
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Maria is going out at {{ states('sensor.date__time') }} <3"
+     message: "gf is going out at {{ states('sensor.date__time') }} <3"
 
 
 ####################################################
-#                  Nico Home                       #
+#                  my Home                       #
 ####################################################
 
-- id: Nico_home
-  alias: Nico at Home - Notification
+- id: my_home
+  alias: my at Home - Notification
   trigger:
      platform: zone
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
      zone: zone.home
      event: enter
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is at Home at {{ states('sensor.date__time') }}"
+     message: "my is at Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Out Home                   #
+#                  my Out Home                   #
 ####################################################
 
-- id: Nico_out_home
-  alias: Nico is going out - Notification
+- id: my_out_home
+  alias: my is going out - Notification
   trigger:
      platform: zone
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
      zone: zone.home
      event: leave    
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"
+     message: "my is going out from {{ trigger.to_state.state }} at  {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Dad                        #
+#                  my Dad                        #
 ####################################################
 
-- id: Nico_dad
-  alias: Nico at Papa's Home - Notification
+- id: my_dad
+  alias: my at Papa's Home - Notification
   trigger:
      platform: zone
      event: enter
      zone: zone.papa
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is at Papa's Home at {{ states('sensor.date__time') }}"
+     message: "my is at Papa's Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Out Dad                    #
+#                  my Out Dad                    #
 ####################################################
 
-- id: Nico_out_dad
-  alias: Nico leaving Papa's Home - Notification
+- id: my_out_dad
+  alias: my leaving Papa's Home - Notification
   trigger:
      platform: zone
      event: leave
      zone: zone.papa
-     entity_id: device_tracker.nico_nico
+     entity_id: device_tracker.my_my
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Nico is going out from Papa's Home {{ states('sensor.date__time') }}"
+     message: "my is going out from Papa's Home {{ states('sensor.date__time') }}"
 
 ####################################################
-#                  Nico Work                       #
+#                  my Work                       #
 ####################################################
 
-- id: Nico_work
-  alias: Nico at Work - Notification
+- id: my_work
+  alias: my at Work - Notification
   trigger:
     platform: zone
     event: enter
     zone: zone.work
-    entity_id: device_tracker.nico_nico
+    entity_id: device_tracker.my_my
   condition:
     condition: time
     after: '07:00:00'
@@ -450,21 +450,21 @@
       - thu
       - fri
   action:
-  -  service: notify.homenicoassistant_bot
+  -  service: notify.homemyassistant_bot
      data:
-       message: "Nico at Work at {{ states('sensor.date__time') }}"
+       message: "my at Work at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                Nico out Work                     #
+#                my out Work                     #
 ####################################################
 
-- id: Nico_out_work
-  alias: Nico out from Work - Notification
+- id: my_out_work
+  alias: my out from Work - Notification
   trigger:
     platform: zone
     event: leave
     zone: zone.work
-    entity_id: device_tracker.nico_nico
+    entity_id: device_tracker.my_my
   condition:
     condition: time
     after: '07:00:00'
@@ -476,9 +476,9 @@
       - thu
       - fri
   action:
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
-       message: "Nico is going out from Work at {{ states('sensor.date__time') }}"
+       message: "my is going out from Work at {{ states('sensor.date__time') }}"
 
 ####################################################
 #                Notify Sunrise                    #
@@ -492,10 +492,10 @@
     offset: '+00:00:00'
   action:
     # Actions are scripts so can also be a list of actions
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "Beautiful sunrise!"
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"
 
@@ -511,10 +511,10 @@
     offset: '+00:00:00'
   action:
     # Actions are scripts so can also be a list of actions
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "Beautiful sunset!"
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "Oh wow you really missed something great. {{ states('sensor.date__time') }}"
 
@@ -538,7 +538,7 @@
   action:
     - service: switch.turn_off
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode changed to: {{ trigger.to_state.state }}"
@@ -552,7 +552,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -564,7 +564,7 @@
     entity_id: input_select.ac_mode
     to: "Hot Morning"
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -572,246 +572,246 @@
 
 ####################################################
 #                     Room                         #
-#                    Lounge                        #
+#                    Living                        #
 ####################################################
 
-- id: Lounge_bright
-  alias: Lounge Brightness
+- id: Living_bright
+  alias: Living Brightness
   trigger:
    - platform: state
-     entity_id: input_slider.lounge_bright
+     entity_id: input_slider.Living_bright
 
   action:
     - service: light.turn_on
       data_template:
-        entity_id: light.lounge__door__rgb
-        brightness: '{{ states.input_slider.lounge_bright.state | int }}'
+        entity_id: light.Living__door__rgb
+        brightness: '{{ states.input_slider.Living_bright.state | int }}'
 
     - service: light.turn_on
       data_template:
-        entity_id: light.lounge__door__rgb
-        brightness: '{{ states.input_slider.lounge_bright.state | int }}'
+        entity_id: light.Living__door__rgb
+        brightness: '{{ states.input_slider.Living_bright.state | int }}'
 
 ####################################################
-#              White Scene Lounge                  #
+#              White Scene Living                  #
 ####################################################
 
-- id: Lounge_Scene_Wite
+- id: Living_Scene_Wite
   alias: White Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "White"
   action:
     - service: scene.turn_on
-      entity_id: scene.white__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.white__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#              Romantic Scene Lounge               #
+#              Romantic Scene Living               #
 ####################################################
 
-- id: Lounge_Scene_Romantic
+- id: Living_Scene_Romantic
   alias: Romantic Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Romantic (Red)"
   action:
     - service: scene.turn_on
-      entity_id: scene.romantic__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.romantic__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#              Movie Scene Lounge                  #
+#              Movie Scene Living                  #
 ####################################################
 
-- id: Lounge_Scene_Movies
+- id: Living_Scene_Movies
   alias: Movie Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Movie (Blue)"
   action:
     - service: scene.turn_on
-      entity_id: scene.movies__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.movies__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Gold Scene Lounge                  #
+#               Gold Scene Living                  #
 ####################################################
 
-- id: Lounge_Scene_Gold
+- id: Living_Scene_Gold
   alias: Gold Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Gold"
   action:
     - service: scene.turn_on
-      entity_id: scene.gold__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.gold__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Purple Scene Lounge                #
+#               Purple Scene Living                #
 ####################################################
 
-- id: Lounge_Scene_Purple
+- id: Living_Scene_Purple
   alias: Purple Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Purple"
   action:
     - service: scene.turn_on
-      entity_id: scene.purple__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.purple__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Green Scene Lounge                 #
+#               Green Scene Living                 #
 ####################################################
 
-- id: Lounge_Scene_Green
+- id: Living_Scene_Green
   alias: Green Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.lounge_scene
+    entity_id: input_select.Living_scene
     to: "Green"
   action:
     - service: scene.turn_on
-      entity_id: scene.green__lounge
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.green__Living
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Lounge Scene changed to: {{ trigger.to_state.state }}"
+           "Living Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
 #                     Room                         #
-#                     Nico                         #
+#                     my                         #
 ####################################################
 
 ####################################################
-#               White Scene Nico                   #
+#               White Scene my                   #
 ####################################################
 
-- id: Nico_Room_Scene_White
+- id: my_Room_Scene_White
   alias: White Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "White"
   action:
     - service: scene.turn_on
-      entity_id: scene.white__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.white__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Romantic Scene Nico                #
+#               Romantic Scene my                #
 ####################################################
 
-- id: Nico_Room_Scene_Romantic
+- id: my_Room_Scene_Romantic
   alias: Romantic Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Romantic (Red)"
   action:
     - service: scene.turn_on
-      entity_id: scene.romantic__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.romantic__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Movie Scene Nico                   #
+#               Movie Scene my                   #
 ####################################################
 
-- id: Nico_Room_Scene_Movie
+- id: my_Room_Scene_Movie
   alias: Movie Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Movie (Blue)"
   action:
     - service: scene.turn_on
-      entity_id: scene.movies__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.movies__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Gold Scene Nico                   #
+#               Gold Scene my                   #
 ####################################################
 
-- id: Nico_Room_Scene_Gold
+- id: my_Room_Scene_Gold
   alias: Gold Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Gold"
   action:
     - service: scene.turn_on
-      entity_id: scene.gold__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.gold__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Purple Scene Nico                 #
+#               Purple Scene my                 #
 ####################################################
 
-- id: Nico_Room_Scene_Purple
+- id: my_Room_Scene_Purple
   alias: Purple Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Purple"
   action:
     - service: scene.turn_on
-      entity_id: scene.purple__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.purple__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Green Scene Nico                   #
+#               Green Scene my                   #
 ####################################################
 
-- id: Nico_Room_Scene_Green
+- id: my_Room_Scene_Green
   alias: Green Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Green"
   action:
     - service: scene.turn_on
-      entity_id: scene.green__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.green__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
 #                                                  #
@@ -828,7 +828,7 @@
   trigger:
     - platform: state
       entity_id:
-        - light.room__nico__rgb
+        - light.room__my__rgb
       state: 'on'
       for: '00:30:00'
     - platform: state
@@ -838,16 +838,16 @@
       for: '01:00:00'
     - platform: state
       entity_id:
-        - light.lounge__door__rgb
-        - light.lounge__sofa__rgb
-        - light.lounge__window__white
+        - light.Living__door__rgb
+        - light.Living__sofa__rgb
+        - light.Living__window__white
       state: 'on'
       for: '02:00:00'
   action:
     - service: light.turn_off
       data_template:
         entity_id: " {{ trigger.entity_id }} "
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
           "{{ trigger.to_state.attributes.friendly_name }} just changed from {{ trigger.to_state.state }}
@@ -868,14 +868,14 @@
    entity_id: group.lights
 
 ####################################################
-#            Lights Turn On Nico                   #
+#            Lights Turn On my                   #
 ####################################################
 
-- id: Lights_Turn_On_Nico
-  alias: 'Turn on Light - WeekDays - Morning - Nicos Room '
+- id: Lights_Turn_On_my
+  alias: 'Turn on Light - WeekDays - Morning - mys Room '
   trigger:
     platform: state
-    entity_id: device_tracker.nicosgs6
+    entity_id: device_tracker.mysgs6
     state: 'home'
   condition:
     condition: time
@@ -889,7 +889,7 @@
       - fri
   action:
    service: homeassistant.turn_on
-   entity_id: light.room__nico__rgb
+   entity_id: light.room__my__rgb
 
 ####################################################
 #              Lights ON Sunset                    #
@@ -908,7 +908,7 @@
   action:
    - service: homeassistant.turn_on
      entity_id: group.lights
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "Sunset - Lights ON at {{ states('sensor.date__time') }}"
 
@@ -930,7 +930,7 @@
     to: "Restart"
   action:
    - service: shell_command.restart_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Restart at {{ states('sensor.date__time') }}"  
 
@@ -946,7 +946,7 @@
     to: "Shutdown"
   action:
    - service: shell_command.shutdown_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Shutdown at {{ states('sensor.date__time') }}"
 
@@ -962,7 +962,7 @@
     to: "Sleep"
   action:
    - service: shell_command.sleep_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Sleep at {{ states('sensor.date__time') }}"
 
@@ -978,6 +978,6 @@
     to: "Hibernate"
   action:
    - service: shell_command.hibernate_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Hibernated at {{ states('sensor.date__time') }}"

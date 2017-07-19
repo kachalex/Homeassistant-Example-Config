@@ -7,7 +7,7 @@
     platform: event
     event_type: homeassistant_start
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
       message: "Home Assistant Start at {{ states('sensor.date__time') }}"
 
@@ -20,6 +20,6 @@
     platform: event
     event_type: homeassistant_stop
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data:
       message: "Home Assistant Stop at {{ states('sensor.date__time') }}"

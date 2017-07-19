@@ -14,7 +14,7 @@
     to: "Restart"
   action:
    - service: shell_command.restart_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Restart at {{ states('sensor.date__time') }}"  
 
@@ -29,7 +29,7 @@
     to: "Shutdown"
   action:
    - service: shell_command.shutdown_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Shutdown at {{ states('sensor.date__time') }}"
 
@@ -44,7 +44,7 @@
     to: "Sleep"
   action:
    - service: shell_command.sleep_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Sleep at {{ states('sensor.date__time') }}"
 
@@ -59,6 +59,6 @@
     to: "Hibernate"
   action:
    - service: shell_command.hibernate_pc
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "PC Hibernated at {{ states('sensor.date__time') }}"

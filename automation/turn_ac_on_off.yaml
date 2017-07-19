@@ -16,7 +16,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning ON - Heat 30 - Automation"
 
@@ -38,7 +38,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__cold_18
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning ON - Cold 18 - Automation  {{ trigger.entity_id }} "
 
@@ -61,6 +61,6 @@
       entity_id: switch.air_conditioner__cold_18
     - service: switch.turn_off
       entity_id: switch.air_conditioner__humidity            
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
         message: "AC Morning OFF - Automation. {{ trigger.entity_id }}"

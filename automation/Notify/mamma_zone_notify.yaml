@@ -4,31 +4,31 @@
 ####################################################
 
 ####################################################
-#                   Mom  Home                      #
+#                   person  Home                      #
 ####################################################
 
-- alias: Mamma at Home - Notification
+- alias: person at Home - Notification
   trigger:
      platform: zone
      event: enter
      zone: zone.home
-     entity_id: device_tracker.mamma_mamma
+     entity_id: device_tracker.person_person
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Mamma is at Home at {{ states('sensor.date__time') }}"
+     message: "person is at Home at {{ states('sensor.date__time') }}"
 
 ####################################################
-#                   Mom Out Home                   #
+#                   person Out Home                   #
 ####################################################
 
-- alias: Mamma Outside Home - Notification
+- alias: person Outside Home - Notification
   trigger:
      platform: zone
      event: leave
      zone: zone.home
-     entity_id: device_tracker.mamma_mamma
+     entity_id: device_tracker.person_person
   action:
-   service: notify.homenicoassistant_bot
+   service: notify.homemyassistant_bot
    data:
-     message: "Mamma is going out at {{ states('sensor.date__time') }}"
+     message: "person is going out at {{ states('sensor.date__time') }}"

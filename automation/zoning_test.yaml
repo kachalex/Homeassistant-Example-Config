@@ -22,7 +22,7 @@
          zone: zone.work
          entity_id: group.family
   action:
-    service: notify.homenicoassistant_bot
+    service: notify.homemyassistant_bot
     data_template:
       message: >
         " {{ trigger.to_state.attributes.friendly_name }} just changed from {{ trigger.from_state.state }}

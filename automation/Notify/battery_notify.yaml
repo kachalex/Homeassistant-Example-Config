@@ -4,10 +4,10 @@
 ####################################################
 
 ####################################################
-#                  Nico Battery                    #
+#                  my Battery                    #
 ####################################################
 
-- alias: Nico Battery Low - Notification
+- alias: my Battery Low - Notification
   trigger:
      platform: time
      # You can also match on interval. This will match every 45 minutes
@@ -18,21 +18,21 @@
      condition: or
      conditions:
        - condition: template
-         value_template: "{{ states.device_tracker.nico_nico.attributes.battery < 30 }}" 
+         value_template: "{{ states.device_tracker.my_my.attributes.battery < 30 }}" 
 
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
-        message: "Nico's Telephone is on low Battery at {{ states('sensor.date__time') }}"
-    - service: notify.homenicoassistant_bot
+        message: "my's Telephone is on low Battery at {{ states('sensor.date__time') }}"
+    - service: notify.homemyassistant_bot
       data:
-        message: "Nico's Telephone Battery Level is {{ states('sensor.batteria_telefono_nico') }}%"
+        message: "my's Telephone Battery Level is {{ states('sensor.batteria_telefono_my') }}%"
 
 ####################################################
-#                  Mom Battery                     #
+#                  person Battery                     #
 ####################################################
 
-- alias: Mamma Battery Low - Notification
+- alias: person Battery Low - Notification
   trigger:
      platform: time
      # You can also match on interval. This will match every 45 minutes
@@ -43,12 +43,12 @@
      condition: or
      conditions:
        - condition: template
-         value_template: "{{ states.device_tracker.mamma_mamma.attributes.battery < 30 }}"
+         value_template: "{{ states.device_tracker.person_person.attributes.battery < 30 }}"
 
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data:
-        message: "Mom's Telephone is on low Battery at {{ states('sensor.date__time') }}"
-    - service: notify.homenicoassistant_bot
+        message: "person's Telephone is on low Battery at {{ states('sensor.date__time') }}"
+    - service: notify.homemyassistant_bot
       data:
-        message: "Mom's Telephone Battery Level is {{ states('sensor.batteria_telefono_mamma') }}%"
+        message: "person's Telephone Battery Level is {{ states('sensor.batteria_telefono_person') }}%"

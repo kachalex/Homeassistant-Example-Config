@@ -14,6 +14,6 @@
   action:
    - service: homeassistant.turn_on
      entity_id: group.lights
-   - service: notify.homenicoassistant_bot
+   - service: notify.homemyassistant_bot
      data:
        message: "Sunset - Lights ON at {{ states('sensor.date__time') }}"

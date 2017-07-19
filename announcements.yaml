@@ -2,8 +2,8 @@
   #trigger:
     #- platform: state
       #entity_id:
-        #- device_tracker.nico_nico
-        #- device_tracker.mamma_mamma
+        #- device_tracker.my_my
+        #- device_tracker.person_person
         #- device_tracker.iphonemarie
       #from: 'not_home'
       #to: 'home'

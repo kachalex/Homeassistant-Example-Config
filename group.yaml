@@ -18,8 +18,8 @@ default_view:
    #- group.efergy
    - group.ac
    - group.wake_on_lan
-   - group.nico
-   - group.mamma
+   - group.my
+   - group.person
    - group.iss
 
 Weather:
@@ -63,7 +63,7 @@ Device:
   icon: mdi:laptop-mac
   name: Dispositivi
   entities:
-   - group.dispositivi_fissi_casa_nico
+   - group.dispositivi_fissi_casa_my
    - group.fritz
 
 Settings:
@@ -98,23 +98,23 @@ Miscellaneous:
   entities:
   - script.restart_ha
 
-Nicos:
+mys:
   view: yes
-  name: Nico
+  name: my
   entities:
-  - group.nico
+  - group.my
 
-Mammas:
+persons:
   view: yes
-  name: Mamma
+  name: person
   entities:
-  - group.mamma
+  - group.person
 
 Mascia:
   view: yes
   name: Mascia
   entities:
-  - group.maria
+  - group.gf
 
 ############################################################
 #                                                          #
@@ -129,19 +129,19 @@ Sun:
 
 Lights:
   entities:
-    - light.lounge__sofa__rgb
-    - light.lounge__door__rgb
-    - light.lounge__window__white
-    - light.room__nico__rgb
+    - light.Living__sofa__rgb
+    - light.Living__door__rgb
+    - light.Living__window__white
+    - light.room__my__rgb
     - light.kitchen__white    
     
 Scenes:
   entities:
-    - scene.romantic__lounge
-    - scene.movies__lounge
-    - scene.lights_on__lounge
-    - scene.lights_off__lounge
-    - scene.romantic__nico
+    - scene.romantic__Living
+    - scene.movies__Living
+    - scene.lights_on__Living
+    - scene.lights_off__Living
+    - scene.romantic__my
     - scene.tv_time
     - input_boolean.tv_time
     #- scene.month_st_patty_colors
@@ -155,7 +155,7 @@ AC:
   - automation.ac__morning__off
 
 Wake on LAN:
-  - switch.nicopc
+  - switch.mypc
   - switch.dsm01
 
 Weather Condition:
@@ -186,13 +186,13 @@ Date:
 
 Family:
   entities:
-    - device_tracker.nico_nico
-    - device_tracker.mamma_mamma
+    - device_tracker.my_my
+    - device_tracker.person_person
     - device_tracker.iphonemarie
 
 Telephones Battery: 
-    - sensor.batteria_telefono_nico
-    - sensor.batteria_telefono_mamma
+    - sensor.batteria_telefono_my
+    - sensor.batteria_telefono_person
     
 Salone Video Camera:
   - camera.camera_salone_r2
@@ -202,17 +202,17 @@ Entertainment:
   - media_player.kd55xd9305
   - media_player.chromecastsalone
 
-Nico:
-  - device_tracker.nico_nico
-  - sensor.batteria_telefono_nico
-  - camera.nico
+my:
+  - device_tracker.my_my
+  - sensor.batteria_telefono_my
+  - camera.my
 
-Mamma:
-  - device_tracker.mamma_mamma
-  - sensor.batteria_telefono_mamma
-  - camera.mamma
+person:
+  - device_tracker.person_person
+  - sensor.batteria_telefono_person
+  - camera.person
 
-Maria:
+gf:
   - device_tracker.iphonemarie
 
 ISS:
@@ -272,21 +272,21 @@ fritz:
 
 Dispositivi Mobili:
   entities:
-    - device_tracker.mammasgs3
-    - device_tracker.nicosgs6
+    - device_tracker.personsgs3
+    - device_tracker.mysgs6
 
-Dispositivi fissi Casa Nico:
+Dispositivi fissi Casa my:
   entities:
      - device_tracker.yeelightrgbsalone
      - device_tracker.yeelightrgbsaloneporta
      - device_tracker.yeelightwhitesalonefinestra
      - device_tracker.yeelightwhitecucina
-     - device_tracker.yeelightrgbnicoroom
+     - device_tracker.yeelightrgbmyroom
      - device_tracker.fritzbox
      - device_tracker.chromecast
      - device_tracker.android7956eaa11ad0a44a
      - device_tracker.android7956eaa11ad0a44a_2
-     - device_tracker.nicopc
+     - device_tracker.mypc
      - device_tracker.pc101010214
      - device_tracker.android22b03b5e29e75f3
      - device_tracker.pc101010207
@@ -310,18 +310,18 @@ Automation Tasks:
   - automation.light_on_sunset
   - automation.lights_self_shutdown
   - automation.login_failure
-  - automation.mamma_at_home__notification
-  - automation.mamma_battery_low__notification
-  - automation.mamma_outside_home__notification
-  - automation.mamma_outside_home__notification_2
-  - automation.maria_at_home__notification
-  - automation.nico_at_home__notification
-  - automation.nico_at_papas_home__notification
-  - automation.nico_at_work__notification
-  - automation.nico_battery_low__notification
-  - automation.nico_is_going_out__notification
-  - automation.nico_leaving_papas_home__notification
-  - automation.nico_out_from_work__notification
+  - automation.person_at_home__notification
+  - automation.person_battery_low__notification
+  - automation.person_outside_home__notification
+  - automation.person_outside_home__notification_2
+  - automation.gf_at_home__notification
+  - automation.my_at_home__notification
+  - automation.my_at_papas_home__notification
+  - automation.my_at_work__notification
+  - automation.my_battery_low__notification
+  - automation.my_is_going_out__notification
+  - automation.my_leaving_papas_home__notification
+  - automation.my_out_from_work__notification
   - automation.no_one_at_home__notification
   - automation.notify_on_sunrise
   - automation.notify_on_sunset
@@ -329,7 +329,7 @@ Automation Tasks:
   - automation.people_greeting
   - automation.presence__notification
   - automation.turn_off_light_at_midnight
-  - automation.turn_on_light__weekdays__morning__nicos_room
+  - automation.turn_on_light__weekdays__morning__mys_room
   - automation.update_available_notifications
 
 Triggers:

@@ -2,11 +2,11 @@
   entities:
        light.Living__sofa__rgb:
            state: on
-           color_name: 'darkblue'
+           color_name: 'white'
            brightness: 255
        light.Living__window__white:
-           state: off
+           state: on
        light.Living__door__rgb:
            state: on
-           color_name: 'darkblue'
+           color_name: 'white'
            brightness: 255

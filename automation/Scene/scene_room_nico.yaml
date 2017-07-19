@@ -1,106 +1,106 @@
 ####################################################
 #                     Room                         #
-#                     Nico                         #
+#                     my                         #
 ####################################################
 
 ####################################################
-#               White Scene Nico                   #
+#               White Scene my                   #
 ####################################################
 
 - alias: White Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "White"
   action:
     - service: scene.turn_on
-      entity_id: scene.white__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.white__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Romantic Scene Nico                #
+#               Romantic Scene my                #
 ####################################################
 
 - alias: Romantic Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Romantic (Red)"
   action:
     - service: scene.turn_on
-      entity_id: scene.romantic__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.romantic__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Movie Scene Nico                   #
+#               Movie Scene my                   #
 ####################################################
 
 - alias: Movie Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Movie (Blue)"
   action:
     - service: scene.turn_on
-      entity_id: scene.movies__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.movies__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Gold Scene Nico                   #
+#               Gold Scene my                   #
 ####################################################
 
 - alias: Gold Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Gold"
   action:
     - service: scene.turn_on
-      entity_id: scene.gold__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.gold__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Purple Scene Nico                 #
+#               Purple Scene my                 #
 ####################################################
 
 - alias: Purple Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Purple"
   action:
     - service: scene.turn_on
-      entity_id: scene.purple__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.purple__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"
 
 ####################################################
-#               Green Scene Nico                   #
+#               Green Scene my                   #
 ####################################################
 
 - alias: Green Scene - Automation
   trigger:
     platform: state
-    entity_id: input_select.nico_room_scene
+    entity_id: input_select.my_room_scene
     to: "Green"
   action:
     - service: scene.turn_on
-      entity_id: scene.green__nico
-    - service: notify.homenicoassistant_bot
+      entity_id: scene.green__my
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
-           "Nico's Room Scene changed to: {{ trigger.to_state.state }}"
+           "my's Room Scene changed to: {{ trigger.to_state.state }}"

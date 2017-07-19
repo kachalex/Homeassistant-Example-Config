@@ -3,7 +3,7 @@
     platform: state
     entity_id: input_select.who_cooks
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "Today Cook {{ trigger.to_state.state }}"

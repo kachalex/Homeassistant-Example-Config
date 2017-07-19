@@ -16,7 +16,7 @@
   action:
     - service: switch.turn_off
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode changed to: {{ trigger.to_state.state }}"
@@ -29,7 +29,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__heat_30
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -40,7 +40,7 @@
     entity_id: input_select.ac_mode
     to: "Hot Morning"
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -53,7 +53,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__cold_18
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -64,7 +64,7 @@
     entity_id: input_select.ac_mode
     to: "Cold Morning"
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -77,7 +77,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.air_conditioner__humidity
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"
@@ -88,7 +88,7 @@
     entity_id: input_select.ac_mode
     to: "Humidity Morning"
   action:
-    - service: notify.homenicoassistant_bot
+    - service: notify.homemyassistant_bot
       data_template:
         message: >
            "AC Mode  changed to: {{ trigger.to_state.state }}"

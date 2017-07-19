@@ -1,12 +1,12 @@
-switch.nicopc:
+switch.mypc:
  icon: mdi:laptop-windows
 device_tracker.fritzbox:
  icon: mdi:router-wireless
-device_tracker.nicosgs6:
+device_tracker.mysgs6:
   icon: mdi:cellphone-android
-device_tracker.nicopc:
+device_tracker.mypc:
   icon: mdi:laptop-windows
-device_tracker.mammasgs3:
+device_tracker.personsgs3:
   icon: mdi:cellphone-android
 device_tracker.wkmob021:
   icon: mdi:laptop-windows

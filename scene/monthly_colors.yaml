@@ -1,18 +1,18 @@
 - name: month_standard_colors
   entities:
-       light.room__nico__rgb:
+       light.room__my__rgb:
            state: 'on'
            color_name: 'Gold'
 
 - name: month_valentine_colors
   entities:
-       light.room__nico__rgb:
+       light.room__my__rgb:
            state: 'on'
            color_name: 'Crimson'
 
 - name: month_st_patty_colors
   entities:
-       light.room__nico__rgb:
+       light.room__my__rgb:
            state: 'on'
            #color_name: 'Dark Spring Green'
            rgb_color: [23,114,69]
@@ -39,7 +39,7 @@
 
 #- name: front_full_brightness
   #entities:
-       #light.room__nico__rgb:
+       #light.room__my__rgb:
            #state: 'on'
            #color_name: 'White'
            #brightness: 250
