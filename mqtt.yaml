@@ -1,4 +1,8 @@
-broker: 10.10.10.200
-port: 1883
+
+### MOSQUITTO ON HASSIO ###
+broker: !secret mqtt_broker
+username: !secret mqtt_hassio_user
+password: !secret mqtt_hassio_pwd
 discovery: true
 discovery_prefix: !secret discoveryprefix
+
